@@ -1,152 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RemotePC — Control Your PC</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="RemotePC is a fast, privacy-first remote control app: mouse & keyboard, screenshots, system stats, volume, file transfer — all over your own Wi‑Fi.">
+  <meta property="og:title" content="RemotePC — Control Your PC">
+  <meta property="og:description" content="Fast, local, privacy-first remote control between your Android and Windows PC.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/mock-screenshot.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header>
-    <div class="nav">
-      <a href="#top" class="brand"><span class="logo"></span><span>RemotePC</span></a>
-      <nav>
-        <ul>
-          <li><a class="navlink" href="#news">News</a></li>
-          <li><a class="navlink" href="#about">About</a></li>
-          <li><a class="navlink" href="#downloads">Downloads</a></li>
-          <li><a class="navlink" href="#faq">FAQ</a></li>
-        </ul>
-      </nav>
-      <div class="spacer"></div>
-      <div class="actions">
-        <button id="themeToggle" class="btn">🌓</button>
-        <button id="hamburger" class="btn hamburger">☰</button>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo"></span><span>RemotePC</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="privacy.html">Privacy</a>
+      <a class="btn" href="terms.html">Terms</a>
+      <a class="cta" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="container hero">
+    <div>
+      <div class="badges" data-animate>
+        <span class="badge">No cloud • Local‑only</span>
+        <span class="badge">Open & transparent</span>
+        <span class="badge">Lightweight C++/Kotlin</span>
       </div>
-      <div id="mobileMenu" class="mobile">
-        <a class="navlink" href="#news">News</a>
-        <a class="navlink" href="#about">About</a>
-        <a class="navlink" href="#downloads">Downloads</a>
-        <a class="navlink" href="#faq">FAQ</a>
+      <h1 data-animate>Control your Windows PC<br>from your Android — instantly.</h1>
+      <p class="lead" data-animate>
+        RemotePC is a fast, privacy‑first remote‑control system. Use your phone as a trackpad and keyboard, see live screenshots,
+        send files, adjust volume, and trigger system actions — all over your own Wi‑Fi. No accounts. No tracking. No cloud.
+      </p>
+      <div class="badges" data-animate>
+        <a class="cta" href="#download" aria-label="Download RemotePC">
+          <span>Download</span>
+        </a>
+        <a class="btn" href="#features">See features</a>
       </div>
     </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Remote control that feels local</span>
-          <h1>RemotePC — fast, secure, and simple.</h1>
-          <p class="lead">Control your Windows PC from Android with gestures, keyboard, screenshots, and more.</p>
-          <div class="cta">
-            <a href="#downloads" class="btn primary">Download</a>
-            <a href="#about" class="btn">Learn more</a>
-          </div>
-        </div>
-        <div class="hero-card">
-            <img src="./pictures/placeholder.png" class="hero-image" alt="App preview">
-          </div>          
-      </div>
-    </section>
-
-    <section id="news" class="container">
-      <span class="eyebrow">Updates</span>
-      <h2>News</h2>
-      <div class="grid">
-        <article class="card"><span class="badge">Oct 2025</span><h3>Beta 0.9 Released</h3><p>File transfer added.</p></article>
-        <article class="card"><span class="badge">Sep 2025</span><h3>Windows listener upgrades</h3><p>Audio + input polish.</p></article>
-        <article class="card"><span class="badge">Aug 2025</span><h3>Android UI overhaul</h3><p>Material You redesign.</p></article>
-      </div>
-    </section>
-
-    <section id="about" class="container">
-      <span class="eyebrow">Why RemotePC</span>
-      <h2>Fast on LAN, private by design</h2>
-      <div class="grid">
-        <div class="card"><h3>Low latency</h3><p>Direct TCP LAN communication.</p></div>
-        <div class="card"><h3>Modern UI</h3><p>Jetpack Compose, gestures, keyboard.</p></div>
-        <div class="card"><h3>Windows listener</h3><p>Handles input and system commands.</p></div>
-        <div class="card"><h3>File transfer</h3><p>Chunked, resumable uploads.</p></div>
-        <div class="card"><h3>Secure</h3><p>Local-first; remote planned.</p></div>
-        <div class="card"><h3>Open source</h3><p>MIT-style license.</p></div>
-      </div>
-    </section>
-
-    <section id="downloads" class="container">
-      <span class="eyebrow">Get the app</span>
-      <h2>Downloads</h2>
-      <div class="dl-grid">
-        <div class="dl"><div><div class="title">Android</div><div class="sub">v0.9</div></div><a class="btn primary" href="#">Download</a></div>
-        <div class="dl"><div><div class="title">Windows</div><div class="sub">v0.9</div></div><a class="btn primary" href="#">Download</a></div>
-      </div>
-    </section>
-
-    <section id="faq" class="container">
-      <span class="eyebrow">Help</span>
-      <h2>FAQ</h2>
-      <div class="faq">
-        <details><summary>LAN or remote?</summary><p>LAN now; remote later.</p></details>
-        <details><summary>Which port?</summary><p>TCP 5000 by default.</p></details>
-        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
-        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
-        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
-        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
-        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <span class="logo" aria-hidden="true"></span>
-          <span class="brand-name">RemotePC</span>
-        </div>
-        <p class="footer-made">Made with ❤️ by Joe</p>
-        <p class="footer-small">© <span id="year"></span> RemotePC. All rights reserved.</p>
-      </div>
-  
-      <nav class="footer-links" aria-label="Footer">
-        <a href="#news" class="u-underline">News</a>
-        <a href="#about" class="u-underline">About</a>
-        <a href="#downloads" class="u-underline">Downloads</a>
-        <a href="#faq" class="u-underline">FAQ</a>
-      </nav>
-  
-      <div class="footer-social" aria-label="Social">
-        <a href="https://github.com/" target="_blank" rel="noopener" class="social" aria-label="GitHub">
-          <!-- GitHub mark -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.2-3.37-1.2-.46-1.17-1.12-1.49-1.12-1.49-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03 .9 1.53 2.36 1.09 2.94.84 .09-.66.35-1.1.63-1.36-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .85-.27 2.8 1.02 .81-.23 1.68-.34 2.55-.34s1.74.11 2.55.34c1.95-1.29 2.8-1.02 2.8-1.02 .55 1.38.2 2.4.1 2.65 .64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95 .36.31.68.92.68 1.86v2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/>
-          </svg>
-        </a>
-        <a href="https://discord.com/" target="_blank" rel="noopener" class="social" aria-label="Discord">
-          <!-- Discord -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.32 4.37A17.54 17.54 0 0 0 15.86 3l-.22.4a16.54 16.54 0 0 1 3.21 1.57c-1.35-.66-2.72-1.16-4.1-1.5a15.82 15.82 0 0 0-3.6 0A17.87 17.87 0 0 0 7.06 5l.26-.51A17.42 17.42 0 0 0 3.68 4.4C1.58 7.5.82 10.5 1 13.46c1.38 1.73 3.6 2.82 6.06 3.4l.77-1.22c-.42-.14-.82-.3-1.2-.49l.28-.21c2.35 1.1 5.09 1.1 7.44 0l.28.21c-.38.19-.78.35-1.2.49l.77 1.22c2.45-.58 4.68-1.67 6.06-3.4 .26-4.02-.7-7-2.94-9.09zM9.2 12.9c-.8 0-1.45-.75-1.45-1.66s.65-1.66 1.45-1.66 1.45.75 1.45 1.66-.64 1.66-1.45 1.66zm5.6 0c-.8 0-1.45-.75-1.45-1.66s.65-1.66 1.45-1.66 1.45.75 1.45 1.66-.65 1.66-1.45 1.66z"/>
-          </svg>
-        </a>
-        <a href="https://youtube.com/" target="_blank" rel="noopener" class="social" aria-label="YouTube">
-          <!-- YouTube -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .6 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.3.6 9.3.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/>
-          </svg>
-        </a>
+    <div class="screen" data-animate aria-hidden="true">
+      <div class="window">
+        <div class="titlebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="mock-screenshot"></div>
       </div>
     </div>
-  
-    <div class="container">
-      <button class="back-to-top u-underline" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        ↑ Back to top <span class="sr-only">(scroll to start of page)</span>
-      </button>
-    </div>
-  </footer>
-  
+  </section>
 
-  <script src="app.js"></script>
+  <!-- Features -->
+  <section id="features" class="section container">
+    <h2 data-animate>Everything you need, nothing you don’t</h2>
+    <p class="lead" data-animate>Designed for speed, simplicity, and full local control.</p>
+    <div class="grid">
+      <div class="card" data-animate>
+        <h3>Trackpad & Keyboard</h3>
+        <p>Move, click, drag, scroll, and type — your phone becomes a precision input device.</p>
+      </div>
+      <div class="card" data-animate>
+        <h3>Live Screenshots</h3>
+        <p>See your desktop in real time. Snapshots are compressed for fast preview.</p>
+      </div>
+      <div class="card" data-animate>
+        <h3>System Stats</h3>
+        <p>CPU, RAM, disk, uptime, temperatures — streamed from your PC to your phone.</p>
+      </div>
+      <div class="card" data-animate>
+        <h3>File Transfer</h3>
+        <p>Pick a file on Android and send it directly to your PC over TCP.</p>
+      </div>
+      <div class="card" data-animate>
+        <h3>Audio Volume</h3>
+        <p>Quickly change Windows system volume via the built‑in COM interface.</p>
+      </div>
+      <div class="card" data-animate>
+        <h3>System Controls</h3>
+        <p>Shutdown, restart, lock, sleep, sign‑out — right from your hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section container">
+    <h2 data-animate>How it works</h2>
+    <div class="steps">
+      <div class="step" data-animate>
+        <div class="num">1</div>
+        <h3>Install the Windows Listener</h3>
+        <p>Download and run the small listener app on your PC. It listens on your local network only.</p>
+      </div>
+      <div class="step" data-animate>
+        <div class="num">2</div>
+        <h3>Open the Android App</h3>
+        <p>Enter your PC’s IP and port. The app connects directly over Wi‑Fi using a custom TCP protocol.</p>
+      </div>
+      <div class="step" data-animate>
+        <div class="num">3</div>
+        <h3>Control & Transfer</h3>
+        <p>Use the trackpad, keyboard, screenshots and file transfer — with zero cloud or accounts.</p>
+      </div>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="carousel" aria-label="App screenshots">
+      <div class="carousel-track">
+        <img class="shot" src="assets/mock-shot-1.png" alt="RemotePC main controls">
+        <img class="shot" src="assets/mock-shot-2.png" alt="System statistics screen">
+        <img class="shot" src="assets/mock-shot-3.png" alt="File transfer picker">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section container">
+    <h2 data-animate>FAQ</h2>
+    <div class="faq">
+
+      <details open>
+        <summary>What permissions does the Android app use, and why?</summary>
+        <p><strong>Network</strong>: to connect to your PC over Wi‑Fi and exchange commands, stats and screenshots. No external servers involved.</p>
+        <p><strong>Storage (optional)</strong>: only when you initiate file transfer. The app reads the file you select and sends it to your PC. It never scans your storage.</p>
+      </details>
+
+      <details>
+        <summary>Why does Windows Defender flag the listener as a “virus”?</summary>
+        <p>It’s a false positive common to remote‑control tools. The listener is small, unsigned, accepts TCP connections, can simulate keyboard/mouse, send screenshots and receive files — behaviors that resemble malware. The key differences: no persistence, no registry hacks, no telemetry, no cloud, local‑only by default, and you run it explicitly.</p>
+        <p>You can restore and allow it in Windows Security, then add it to Exclusions to prevent future removals.</p>
+      </details>
+
+      <details>
+        <summary>Can anyone else access my PC?</summary>
+        <p>Only devices on your network that know your PC’s IP and port. RemotePC is LAN‑first and not reachable from the internet unless you manually port‑forward (not recommended).</p>
+      </details>
+
+      <details>
+        <summary>Does the app track me or send data to the cloud?</summary>
+        <p>No. No accounts, no analytics, no telemetry. Traffic stays in your network.</p>
+      </details>
+
+      <details>
+        <summary>Can I use it over mobile data?</summary>
+        <p>Possible with manual port forwarding and a stable public IP, but this is an advanced, optional setup.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" class="section container">
+    <h2 data-animate>Download</h2>
+    <div class="cta-band" data-animate>
+      <div>
+        <strong>Get started in two minutes.</strong><br>
+        Download the Windows listener and the Android app.
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta" href="#" title="Windows Listener (EXE)">Windows Listener (EXE)</a>
+        <a class="btn" href="#" title="Android App (APK)">Android App (APK)</a>
+        <a class="btn" href="#" title="Source Code">Source Code</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div>© 2025-10-30 RemotePC. All rights reserved.</div>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
-
