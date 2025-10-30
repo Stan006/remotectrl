@@ -114,3 +114,63 @@ footer a:hover{color:var(--text);text-decoration:none}
   .grid{grid-template-columns:1fr}
   .hero h1{font-size:34px}
 }
+/* ===== Mobile nav toggle ===== */
+.nav-toggle{
+  display:none;
+  background:none;border:0;padding:8px;margin:0;
+  border-radius:10px;
+}
+.nav-toggle:focus{outline:none; box-shadow: var(--ring)}
+.nav-toggle-bar{
+  display:block;width:24px;height:2px;background:var(--text);
+  border-radius:2px; margin:5px 0;
+}
+
+/* Base touch improvements */
+a,.btn,.cta, summary { -webkit-tap-highlight-color: transparent; }
+summary{padding:10px 0}
+
+/* Make CTA/buttons comfy on small screens, improve spacing */
+@media (max-width: 960px){
+  .nav-toggle{display:inline-flex}
+  .navlinks{
+    position:fixed; inset:58px 16px auto 16px;
+    display:none; flex-direction:column; gap:8px;
+    background:var(--surface); border:1px solid rgba(255,255,255,.10);
+    border-radius:14px; padding:12px; box-shadow: var(--shadow);
+  }
+  .navlinks.open{display:flex}
+  body.nav-open{overflow:hidden}
+
+  .hero{grid-template-columns:1fr; padding:44px 0 24px}
+  .hero h1{font-size:32px; line-height:1.15}
+  .hero p.lead{font-size:16px; max-width:unset}
+
+  .cta, .btn{width:100%; justify-content:center}
+
+  .section{padding:44px 0}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+
+  .container{padding:0 16px}
+}
+
+/* Very small screens: single-column everywhere, bigger hit targets */
+@media (max-width: 600px){
+  .grid{grid-template-columns:1fr}
+  .badge{padding:10px 12px}
+  .card{padding:16px}
+  .faq details{padding:14px}
+  .shot{min-width: 85vw}
+  .hero h1{font-size:28px}
+  footer .container{flex-direction:column; align-items:flex-start; gap:8px}
+}
+
+/* Smooth horizontal scroll on iOS */
+.carousel-track{ -webkit-overflow-scrolling: touch; scroll-behavior:smooth }
+
+/* Optional: subtler header backdrop on low-end mobiles */
+@media (max-width: 600px){
+  .header{backdrop-filter: blur(6px)}
+}
+

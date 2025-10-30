@@ -46,3 +46,16 @@
     next.addEventListener('click', ()=> track.scrollBy({left: step, behavior:'smooth'}));
   });
 })();
+
+// Mobile nav toggle
+(() => {
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('open', !open);
+    document.body.classList.toggle('nav-open', !open);
+  });
+})();
