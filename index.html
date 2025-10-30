@@ -1,1 +1,99 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RemotePC — Control Your PC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav">
+      <a href="#top" class="brand"><span class="logo"></span><span>RemotePC</span></a>
+      <nav>
+        <ul>
+          <li><a class="navlink" href="#news">News</a></li>
+          <li><a class="navlink" href="#about">About</a></li>
+          <li><a class="navlink" href="#downloads">Downloads</a></li>
+          <li><a class="navlink" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="spacer"></div>
+      <div class="actions">
+        <button id="themeToggle" class="btn">🌓</button>
+        <button id="hamburger" class="btn hamburger">☰</button>
+      </div>
+      <div id="mobileMenu" class="mobile">
+        <a class="navlink" href="#news">News</a>
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#downloads">Downloads</a>
+        <a class="navlink" href="#faq">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Remote control that feels local</span>
+          <h1>RemotePC — fast, secure, and simple.</h1>
+          <p class="lead">Control your Windows PC from Android with gestures, keyboard, screenshots, and more.</p>
+          <div class="cta">
+            <a href="#downloads" class="btn primary">Download</a>
+            <a href="#about" class="btn">Learn more</a>
+          </div>
+        </div>
+        <div class="hero-card"><div class="screenshot"></div></div>
+      </div>
+    </section>
+
+    <section id="news" class="container">
+      <span class="eyebrow">Updates</span>
+      <h2>News</h2>
+      <div class="grid">
+        <article class="card"><span class="badge">Oct 2025</span><h3>Beta 0.9 Released</h3><p>File transfer added.</p></article>
+        <article class="card"><span class="badge">Sep 2025</span><h3>Windows listener upgrades</h3><p>Audio + input polish.</p></article>
+        <article class="card"><span class="badge">Aug 2025</span><h3>Android UI overhaul</h3><p>Material You redesign.</p></article>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <span class="eyebrow">Why RemotePC</span>
+      <h2>Fast on LAN, private by design</h2>
+      <div class="grid">
+        <div class="card"><h3>Low latency</h3><p>Direct TCP LAN communication.</p></div>
+        <div class="card"><h3>Modern UI</h3><p>Jetpack Compose, gestures, keyboard.</p></div>
+        <div class="card"><h3>Windows listener</h3><p>Handles input and system commands.</p></div>
+        <div class="card"><h3>File transfer</h3><p>Chunked, resumable uploads.</p></div>
+        <div class="card"><h3>Secure</h3><p>Local-first; remote planned.</p></div>
+        <div class="card"><h3>Open source</h3><p>MIT-style license.</p></div>
+      </div>
+    </section>
+
+    <section id="downloads" class="container">
+      <span class="eyebrow">Get the app</span>
+      <h2>Downloads</h2>
+      <div class="dl-grid">
+        <div class="dl"><div><div class="title">Android</div><div class="sub">v0.9</div></div><a class="btn primary" href="#">Download</a></div>
+        <div class="dl"><div><div class="title">Windows</div><div class="sub">v0.9</div></div><a class="btn primary" href="#">Download</a></div>
+      </div>
+    </section>
+
+    <section id="faq" class="container">
+      <span class="eyebrow">Help</span>
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details><summary>LAN or remote?</summary><p>LAN now; remote later.</p></details>
+        <details><summary>Which port?</summary><p>TCP 5000 by default.</p></details>
+        <details><summary>Permissions?</summary><p>Local network + storage for files.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container foot">© <span id="year"></span> RemotePC</div></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
