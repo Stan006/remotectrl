@@ -183,36 +183,52 @@ summary{padding:10px 0}
   .header{backdrop-filter: blur(6px)}
 }
 
-/* Light / Dark variables */
-:root {
-  --bg: #ffffff;
-  --text: #000000;
+/* ===== THEME OVERRIDES (force Light/Dark) =====
+   Uses classes on <html> (documentElement): .light or .dark
+   If neither is present, it falls back to system (prefers-color-scheme).
+   This overrides the full color token set, not just bg/text. */
+
+/* Force LIGHT */
+:root.light{
+  --bg:#f6f8fc;
+  --surface:#ffffff;
+  --surface-2:#eef2ff;
+  --text:#161a26;
+  --muted:#44506c;
+  --brand:#1b64ff;
+  --brand-2:#00a483;
+  --accent:#d85400;
+  --ok:#0d9151;
+  --danger:#c23030;
+  --shadow:0 6px 18px rgba(0,0,0,.08), inset 0 0 0 1px rgba(0,0,0,.06);
+  color-scheme: light;
 }
 
-:root.dark {
-  --bg: #0d0d0d;
-  --text: #ffffff;
+/* Force DARK */
+:root.dark{
+  --bg:#0b0d12;
+  --surface:#111523;
+  --surface-2:#0f1422;
+  --text:#e7ecf7;
+  --muted:#9fb0d1;
+  --brand:#6ea8ff;
+  --brand-2:#82ffd8;
+  --accent:#ffaa80;
+  --ok:#7dffa7;
+  --danger:#ff7d7d;
+  --shadow: 0 10px 30px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);
+  color-scheme: dark;
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: background .25s ease, color .25s ease;
-}
-
-/* Button styling */
-.theme-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 0;
+/* Theme button (use tokens so it works in both modes) */
+.theme-btn{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 20px;
-  backdrop-filter: blur(6px);
+  font-size: 18px;
+  color: var(--text);
+  box-shadow: var(--shadow);
 }
-
-.theme-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-
+.theme-btn:hover{ background: rgba(255,255,255,.16) }
