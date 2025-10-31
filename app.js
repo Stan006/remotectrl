@@ -60,23 +60,47 @@
   });
 })();
 
-  const body = document.documentElement;
-  const toggleBtn = document.getElementById("theme-toggle");
-  const themeIcon = document.getElementById("theme-icon");
+// ===== Theme toggle: light <-> dark <-> system =====
+(() => {
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    themeIcon.textContent = "☀️";
+  const getSaved = () => localStorage.getItem("theme") || "system";
+  const setSaved = (mode) => localStorage.setItem("theme", mode);
+
+  function apply(mode){
+    root.classList.remove("light", "dark");
+    if(mode === "light") root.classList.add("light");
+    if(mode === "dark")  root.classList.add("dark");
+
+    // effective state for icon
+    const effectiveDark = mode === "dark" || (mode === "system" && mql.matches);
+    icon.textContent = effectiveDark ? "☀️" : (mode === "system" ? "🖥️" : "🌙");
+    btn.setAttribute("title", `Theme: ${mode[0].toUpperCase()+mode.slice(1)} (click to change)`);
+    btn.setAttribute("aria-label", `Toggle theme (current: ${mode})`);
   }
 
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    const isDark = body.classList.contains("dark");
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+  // React to system changes when in system mode
+  mql.addEventListener?.("change", () => {
+    if(getSaved() === "system") apply("system");
   });
 
+  // Cycle modes: light -> dark -> system -> light ...
+  function next(mode){
+    if(mode === "light") return "dark";
+    if(mode === "dark")  return "system";
+    return "light"; // system -> light
+  }
+
+  // Init + hook
+  let mode = getSaved();      // 'light' | 'dark' | 'system'
+  apply(mode);
+  btn.addEventListener("click", () => {
+    mode = next(mode);
+    setSaved(mode);
+    apply(mode);
+  });
+})();
 
