@@ -86,7 +86,16 @@ img{max-width:100%;height:auto;border-radius:12px}
 .carousel{position:relative;margin-top:12px}
 .carousel-track{display:flex;overflow:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:10px}
 .carousel-track::-webkit-scrollbar{height:8px}.carousel-track::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:999px}
-.shot{min-width: 360px;flex:0 0 auto;scroll-snap-align:start;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+
+.shot{
+  width: clamp(160px, 28vw, 260px);
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: var(--shadow);
+}
+
 
 /* FAQ */
 .faq{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
