@@ -4,15 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Terms of Service — RemotePC</title>
-  <meta name="description" content="Terms of Service for RemotePC. Simple and human‑readable.">
+  <meta name="description" content="Terms of Service for RemotePC. Simple and human-readable.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="logo"></span><span>RemotePC</span></a>
-    <nav class="navlinks">
+
+    <!-- Theme toggle (required so app.js can apply saved theme) -->
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+      <span id="theme-icon">🌙</span>
+    </button>
+
+    <nav id="primary-nav" class="navlinks">
       <a href="index.html#features">Features</a>
       <a href="index.html#how">How it works</a>
       <a href="index.html#faq">FAQ</a>
@@ -23,7 +30,7 @@
 
 <main class="container section">
   <h1 data-animate>Terms of Service</h1>
-  <p class="lead" data-animate>Plain‑English terms so you can get on with your day.</p>
+  <p class="lead" data-animate>Plain-English terms so you can get on with your day.</p>
 
   <div class="card" data-animate>
     <h2>License</h2>
@@ -32,7 +39,7 @@
 
   <div class="card" data-animate>
     <h2>No Cloud, No Accounts</h2>
-    <p>RemotePC is a local‑first tool. You are responsible for your network configuration if you choose to expose services beyond your LAN.</p>
+    <p>RemotePC is a local-first tool. You are responsible for your network configuration if you choose to expose services beyond your LAN.</p>
   </div>
 
   <div class="card" data-animate>
@@ -52,7 +59,7 @@
 
   <div class="card" data-animate>
     <h2>Contact</h2>
-    <p>Questions about these terms? Email <a href="mailto: stanwheat00@gmail.com">contact@example.com</a>.</p>
+    <p>Questions about these terms? Email <a href="mailto:contact@example.com">contact@example.com</a>.</p>
   </div>
 </main>
 
