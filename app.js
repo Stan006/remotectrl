@@ -59,3 +59,24 @@
     document.body.classList.toggle('nav-open', !open);
   });
 })();
+
+  const body = document.documentElement;
+  const toggleBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    themeIcon.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    const isDark = body.classList.contains("dark");
+    themeIcon.textContent = isDark ? "☀️" : "🌙";
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
+
