@@ -183,3 +183,36 @@ summary{padding:10px 0}
   .header{backdrop-filter: blur(6px)}
 }
 
+/* Light / Dark variables */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+:root.dark {
+  --bg: #0d0d0d;
+  --text: #ffffff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background .25s ease, color .25s ease;
+}
+
+/* Button styling */
+.theme-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
