@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>RemotePC – News & Updates</title>
+    <link>https://remotepc.tech/news.html</link>
+    <description>Release notes, roadmap updates, and development logs for the RemotePC Android app and Windows listener.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Nov 2025 18:00:00 +0200</lastBuildDate>
+    <generator>Hand-edited XML (yes, really)</generator>
+
+    <item>
+      <title>v0.3.0 — Encrypted chat & early file transfer</title>
+      <link>https://remotepc.tech/news.html#v030</link>
+      <guid isPermaLink="false">remotepc-v0.3.0</guid>
+      <pubDate>Sun, 30 Nov 2025 18:00:00 +0200</pubDate>
+      <description><![CDATA[
+        This version focuses on secure communication and local file transfer. Adds end-to-end
+        encrypted chat between Android and Windows plus an early file transfer implementation.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Desktop alpha cleanup — tray, logging & exits</title>
+      <link>https://remotepc.tech/news.html#desktop-alpha-cleanup</link>
+      <guid isPermaLink="false">remotepc-desktop-alpha-cleanup-2025-11-10</guid>
+      <pubDate>Mon, 10 Nov 2025 15:00:00 +0200</pubDate>
+      <description><![CDATA[
+        Quality-of-life improvements on the Windows listener: better tray behavior, clearer errors
+        when ports are in use, and a crash on exit fixed.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Roadmap — Short-term plan for RemotePC</title>
+      <link>https://remotepc.tech/news.html#roadmap-2025-10</link>
+      <guid isPermaLink="false">remotepc-roadmap-2025-10-28</guid>
+      <pubDate>Tue, 28 Oct 2025 12:00:00 +0200</pubDate>
+      <description><![CDATA[
+        Short-term goals: smoother gestures, PIN-based pairing, better diagnostics, and clipboard
+        sync between Android and Windows.
+      ]]></description>
+    </item>
+
+  </channel>
+</rss>

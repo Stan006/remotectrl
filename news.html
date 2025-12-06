@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News & Updates — RemotePC</title>
+  <meta name="description" content="News, release notes, and development updates for RemotePC.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Global styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="news.css">
+  <!-- Global scripts -->
+  <link
+  rel="alternate"
+  type="application/rss+xml"
+  title="RemotePC – News & Updates"
+  href="https://remotepc.tech/rss.xml">
+  <script defer src="app.js"></script>
+  <!-- Page-specific scripts -->
+  <script defer src="news.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo"></span><span>RemotePC</span>
+    </a>
+
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+      <span id="theme-icon">🌙</span>
+    </button>
+
+    <nav id="primary-nav" class="navlinks">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="news.html" class="active">News</a>
+      <a class="cta" href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section container news-layout">
+    <!-- MAIN COLUMN -->
+    <div class="news-main">
+      <div class="news-header" data-animate>
+        <p class="badge">News & updates</p>
+        <h1>RemotePC development log</h1>
+        <p>
+          Release notes, roadmap updates, and honest progress reports for the
+          RemotePC Android app and Windows listener.
+        </p>
+      </div>
+
+      <!-- Search + filters -->
+      <div class="news-controls" data-animate>
+        <div class="news-search">
+          <span class="news-search-icon">🔎</span>
+          <input
+            type="text"
+            placeholder="Search updates (e.g. 'chat', 'file transfer')"
+            aria-label="Search news"
+            data-news-search
+          >
+        </div>
+        <div class="news-filters" aria-label="Filter by category">
+          <button class="filter-pill is-active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="release">Releases</button>
+          <button class="filter-pill" data-filter="android">Android</button>
+          <button class="filter-pill" data-filter="desktop">Windows</button>
+          <button class="filter-pill" data-filter="roadmap">Roadmap</button>
+          <button class="filter-pill" data-filter="bugfix">Bug fixes</button>
+          <button class="filter-pill" data-filter="devlog">Devlog</button>
+        </div>
+      </div>
+
+      <!-- News posts -->
+      <div class="news-list" id="news-list">
+        <!-- Latest / featured -->
+        <article
+          class="card news-item"
+          data-animate
+          data-news-item
+          data-category="release android desktop"
+        >
+          <h2>v0.3.0 — Encrypted chat & early file transfer</h2>
+          <div class="news-meta">
+            <span>2025-11-30</span>
+            <span>•</span>
+            <span>Android · Windows</span>
+            <span class="news-tag">Release</span>
+          </div>
+          <div class="news-body">
+            <p>
+              This version focuses on features that actually matter: secure communication
+              and getting files across the local network without begging a cloud service.
+            </p>
+            <ul>
+              <li>End-to-end encrypted text chat between Android and Windows listener.</li>
+              <li>Initial file transfer support from Android to Windows.</li>
+              <li>Improved handling of flaky Wi-Fi connections.</li>
+              <li>Reduced idle CPU usage on the desktop app while connected.</li>
+            </ul>
+            <p>
+              Expect rough edges on file transfer. If it breaks, keep the file name
+              and steps to reproduce and send them via the contact email.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="card news-item"
+          data-animate
+          data-news-item
+          data-category="release desktop bugfix"
+        >
+          <h2>Desktop alpha cleanup — tray, logging & exits</h2>
+          <div class="news-meta">
+            <span>2025-11-10</span>
+            <span>•</span>
+            <span>Windows listener</span>
+            <span class="news-tag">Bugfix · Alpha</span>
+          </div>
+          <div class="news-body">
+            <p>
+              This one is less flashy, more “stop being annoying” focused for the
+              Windows side of things.
+            </p>
+            <ul>
+              <li>Tray icon now behaves properly when closing / minimizing the app.</li>
+              <li>Clearer error messages when the chosen port is already in use.</li>
+              <li>Fixed rare crash when closing the window during an active session.</li>
+              <li>Improved log messages around connection lifecycle.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article
+          class="card news-item"
+          data-animate
+          data-news-item
+          data-category="roadmap android desktop"
+        >
+          <h2>Roadmap — Short-term plan for RemotePC</h2>
+          <div class="news-meta">
+            <span>2025-10-28</span>
+            <span>•</span>
+            <span>Planning</span>
+            <span class="news-tag">Roadmap</span>
+          </div>
+          <div class="news-body">
+            <p>Current priorities for upcoming builds:</p>
+            <ul>
+              <li>More precise trackpad gestures and scrolling smoothness.</li>
+              <li>Optional pairing via PIN for shared networks.</li>
+              <li>Improved diagnostics screen (latency, packet drops, logs).</li>
+              <li>Clipboard sync between Android and Windows (text first, files later).</li>
+            </ul>
+            <p>
+              Priorities can change based on how badly something is breaking in the real world.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="card news-item"
+          data-animate
+          data-news-item
+          data-category="devlog android desktop bugfix"
+        >
+          <h2>Devlog — Stuff that broke, then worked (mostly)</h2>
+          <div class="news-meta">
+            <span>2025-10-12</span>
+            <span>•</span>
+            <span>Devlog</span>
+            <span class="news-tag">Behind the scenes</span>
+          </div>
+          <div class="news-body">
+            <p>A few highlights from recent sessions:</p>
+            <ul>
+              <li>
+                Spent an unhealthy amount of time fixing a bug that turned out to be
+                a typo in a packet header.
+              </li>
+              <li>
+                Discovered that certain routers “optimize” traffic by randomly ruining it.
+              </li>
+              <li>
+                Windows tried to keep old listener processes alive “for convenience”.
+                It is now less convenient.
+              </li>
+            </ul>
+            <p>
+              The goal of these logs is simple: keep a human-readable history of why
+              things work the way they do.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <p class="news-empty" id="news-empty">
+        No posts match your filters. Try clearing the search or changing category.
+      </p>
+
+      <!-- Timeline + downloads -->
+      <div class="card" data-animate>
+        <div class="timeline">
+          <div class="timeline-title">Version timeline</div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-item-header">
+                <span class="timeline-version">v0.3.0</span>
+                <span class="timeline-date">2025-11-30</span>
+              </div>
+              <div class="timeline-notes">
+                Encrypted chat, first file transfer implementation, stability tweaks.
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-item-header">
+                <span class="timeline-version">v0.2.2</span>
+                <span class="timeline-date">2025-11-10</span>
+              </div>
+              <div class="timeline-notes">
+                Desktop alpha improvements: tray behavior, clearer logs, crash fixes.
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-item-header">
+                <span class="timeline-version">v0.2.0</span>
+                <span class="timeline-date">2025-10-28</span>
+              </div>
+              <div class="timeline-notes">
+                Better connection handling, configurable ports, and early roadmap shaping.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="downloads-block">
+          <div class="timeline-title">Download history</div>
+          <table class="downloads-table">
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Platform</th>
+                <th>Notes</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v0.3.0</td>
+                <td>Android · Windows</td>
+                <td>Latest stable pre-1.0 build.</td>
+                <td><a href="#" class="btn-link">Download</a></td>
+              </tr>
+              <tr>
+                <td>v0.2.2</td>
+                <td>Windows</td>
+                <td>Alpha desktop focus, tray & logging.</td>
+                <td><a href="#" class="btn-link">Download</a></td>
+              </tr>
+              <tr>
+                <td>v0.2.0</td>
+                <td>Android</td>
+                <td>Stable mouse control & gestures.</td>
+                <td><a href="#" class="btn-link">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="sidebar-note">
+            Links are placeholders. Point these to wherever you host your APK / installer
+            (GitHub releases, direct download, etc.).
+          </p>
+        </div>
+      </div>
+
+      <!-- Devlog snippet card -->
+      <div class="card" data-animate>
+        <div class="timeline-title">Behind the scenes</div>
+        <ul class="devlog-list">
+          <li>
+            <strong>Network quirks:</strong> some routers aggressively kill “idle”
+            connections. Heartbeats and better reconnect logic are in progress.
+          </li>
+          <li>
+            <strong>Windows tray:</strong> making it “just sit there and behave” took
+            more work than actual features.
+          </li>
+          <li>
+            <strong>Gesture tuning:</strong> small changes in sensitivity dramatically
+            change how “natural” the trackpad feels. Still tweaking.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="news-sidebar">
+      <!-- Status widget -->
+      <div class="card" data-animate>
+        <div class="sidebar-title">Status</div>
+        <div class="status-grid">
+          <div class="status-row">
+            <span class="status-label">Android app</span>
+            <span class="status-value">
+              <span class="status-pill">
+                <span class="status-dot"></span> Stable
+              </span>
+            </span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Windows listener</span>
+            <span class="status-value">
+              <span class="status-pill">
+                <span class="status-dot warn"></span> Beta
+              </span>
+            </span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Update channel</span>
+            <span class="status-value">v0.3.0</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Last updated</span>
+            <span class="status-value">2025-11-30</span>
+          </div>
+        </div>
+        <p class="sidebar-note">
+          Status is manually updated with each release. If something feels obviously broken,
+          check here first.
+        </p>
+      </div>
+
+      <!-- Categories overview -->
+      <div class="card" data-animate>
+        <div class="sidebar-title">Categories</div>
+        <ul class="sidebar-list">
+          <li><strong>Releases</strong> — main version bumps & change logs.</li>
+          <li><strong>Android</strong> — updates specific to the phone app.</li>
+          <li><strong>Windows</strong> — listener, tray, networking details.</li>
+          <li><strong>Roadmap</strong> — what’s being worked on next.</li>
+          <li><strong>Bug fixes</strong> — things that should stop breaking.</li>
+          <li><strong>Devlog</strong> — informal notes & experiments.</li>
+        </ul>
+      </div>
+
+      <!-- Coming soon -->
+      <div class="card" data-animate>
+        <div class="sidebar-title">Coming soon</div>
+        <ul class="sidebar-list">
+          <li>PIN-based pairing for shared networks.</li>
+          <li>Improved gesture handling & sensitivity tuning.</li>
+          <li>Clipboard sync (text first, maybe files later).</li>
+          <li>More detailed diagnostics screen in the app.</li>
+        </ul>
+      </div>
+
+      <!-- Known issues -->
+      <div class="card" data-animate>
+        <div class="sidebar-title">Known issues</div>
+        <ul class="sidebar-list">
+          <li>
+            On some routers, connections drop after long idle periods
+            (reconnect logic is being improved).
+          </li>
+          <li>
+            File transfer may fail with very long or unusual filenames
+            (especially with emojis).
+          </li>
+          <li>
+            Certain Windows setups keep ghost processes around after closing
+            the listener; the app tries to detect & avoid duplicates.
+          </li>
+        </ul>
+        <p class="sidebar-note">
+          If you hit something not listed here, mention your Android version, Windows version,
+          and a rough description of your network setup when reporting it.
+        </p>
+      </div>
+
+      <!-- Follow / feedback -->
+      <div class="card" data-animate>
+        <div class="sidebar-title">Stay updated</div>
+        <p class="sidebar-note">
+          Follow development, report issues, or grab test builds:
+        </p>
+        <ul class="sidebar-list">
+          <li><a href="#" class="btn-link">GitHub repository</a> (issues & releases)</li>
+          <li><a href="#" class="btn-link">Issue tracker</a> for bugs & feature requests</li>
+          <li><a href="rss.xml" class="btn-link">RSS feed</a> for news updates</li>
+        </ul>
+        <p class="sidebar-note">
+          You can also reach out via the contact email in the footer for anything that
+          doesn’t fit nicely into an issue.
+        </p>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-flex">
+    <div>© 2025 RemotePC. All rights reserved.</div>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

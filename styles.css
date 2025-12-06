@@ -1,6 +1,3 @@
-
-/* RemotePC Website Styles */
-/* Reset & base */
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{margin:0;padding:0}
 :root{
   --bg:#0b0d12;
@@ -33,7 +30,6 @@ a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;border-radius:12px}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* Header */
 .header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(0,0,0,.6), transparent 70%);backdrop-filter: blur(10px)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;color:var(--text);text-decoration:none}
@@ -48,7 +44,6 @@ img{max-width:100%;height:auto;border-radius:12px}
      padding:10px 14px;border-radius:12px;color:var(--text);text-decoration:none;box-shadow:var(--shadow)}
 .btn:hover{background:var(--surface-2)}
 
-/* Hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;padding:60px 0 30px}
 .hero h1{font-size:46px;line-height:1.1;margin:.2em 0 .3em 0;letter-spacing:-0.02em}
 .hero p.lead{font-size:18px;color:var(--muted);max-width:60ch}
@@ -67,7 +62,6 @@ img{max-width:100%;height:auto;border-radius:12px}
   url('assets/mock-screenshot.png') center/cover no-repeat;
 }
 
-/* Feature grid */
 .section{padding:56px 0}
 .section h2{font-size:32px;letter-spacing:-.02em;margin:0 0 14px}
 .section p.lead{color:var(--muted);margin-top:0}
@@ -77,12 +71,10 @@ img{max-width:100%;height:auto;border-radius:12px}
 .card h3{margin:4px 0 8px;font-size:18px}
 .card p{color:var(--muted);font-size:14px;margin:0}
 
-/* How it works */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0}
 .step{padding:16px;border-radius:16px;background:var(--surface);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
 .step .num{font-weight:800;color:var(--brand)}
 
-/* Screenshots carousel */
 .carousel{position:relative;margin-top:12px}
 .carousel-track{display:flex;overflow:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:10px}
 .carousel-track::-webkit-scrollbar{height:8px}.carousel-track::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:999px}
@@ -96,24 +88,19 @@ img{max-width:100%;height:auto;border-radius:12px}
   box-shadow: var(--shadow);
 }
 
-
-/* FAQ */
 .faq{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
 .faq details{background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
 .faq summary{cursor:pointer;font-weight:700}
 .faq p{color:var(--muted)}
 
-/* CTA */
 .cta-band{background: linear-gradient(120deg, rgba(110,168,255,.18), rgba(130,255,216,.14)); border:1px solid rgba(255,255,255,.1);
           padding:22px;border-radius:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 
-/* Footer */
 footer{padding:30px 0;color:var(--muted)}
 footer .links{display:flex;gap:14px;flex-wrap:wrap}
 footer a{color:var(--muted)}
 footer a:hover{color:var(--text);text-decoration:none}
 
-/* Responsive */
 @media (max-width: 960px){
   .hero{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr 1fr}
@@ -123,7 +110,7 @@ footer a:hover{color:var(--text);text-decoration:none}
   .grid{grid-template-columns:1fr}
   .hero h1{font-size:34px}
 }
-/* ===== Mobile nav toggle ===== */
+
 .nav-toggle{
   display:none;
   background:none;border:0;padding:8px;margin:0;
@@ -135,11 +122,9 @@ footer a:hover{color:var(--text);text-decoration:none}
   border-radius:2px; margin:5px 0;
 }
 
-/* Base touch improvements */
 a,.btn,.cta, summary { -webkit-tap-highlight-color: transparent; }
 summary{padding:10px 0}
 
-/* Make CTA/buttons comfy on small screens, improve spacing */
 @media (max-width: 960px){
   .nav-toggle{display:inline-flex}
   .navlinks{
@@ -164,7 +149,6 @@ summary{padding:10px 0}
   .container{padding:0 16px}
 }
 
-/* Very small screens: single-column everywhere, bigger hit targets */
 @media (max-width: 600px){
   .grid{grid-template-columns:1fr}
   .badge{padding:10px 12px}
@@ -175,20 +159,12 @@ summary{padding:10px 0}
   footer .container{flex-direction:column; align-items:flex-start; gap:8px}
 }
 
-/* Smooth horizontal scroll on iOS */
 .carousel-track{ -webkit-overflow-scrolling: touch; scroll-behavior:smooth }
 
-/* Optional: subtler header backdrop on low-end mobiles */
 @media (max-width: 600px){
   .header{backdrop-filter: blur(6px)}
 }
 
-/* ===== THEME OVERRIDES (force Light/Dark) =====
-   Uses classes on <html> (documentElement): .light or .dark
-   If neither is present, it falls back to system (prefers-color-scheme).
-   This overrides the full color token set, not just bg/text. */
-
-/* Force LIGHT */
 :root.light{
   --bg:#f6f8fc;
   --surface:#ffffff;
@@ -204,7 +180,6 @@ summary{padding:10px 0}
   color-scheme: light;
 }
 
-/* Force DARK */
 :root.dark{
   --bg:#0b0d12;
   --surface:#111523;
@@ -220,7 +195,6 @@ summary{padding:10px 0}
   color-scheme: dark;
 }
 
-/* Theme button (use tokens so it works in both modes) */
 .theme-btn{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.12);
