@@ -104,3 +104,101 @@
   });
 })();
 
+(function () {
+  const CONSENT_KEY = 'remotepc_cookie_consent'; // 'all' | 'essential'
+
+  function getConsent() {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setConsent(value) {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch (e) {
+      // storage blocked, whatever
+    }
+  }
+
+  function showBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.add('visible');
+    }
+  }
+
+  function hideBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.remove('visible');
+    }
+  }
+
+  // Load Google Analytics only if allowed
+  function loadAnalytics() {
+    if (window.__rp_analytics_loaded) return;
+    window.__rp_analytics_loaded = true;
+
+    // put your GA4 ID here:
+    const GA_ID = 'G-2FD0X1BBMS'; // <--- replace with your actual ID
+
+    // base script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(script);
+
+    // gtag init
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_ID, {
+      anonymize_ip: true
+    });
+  }
+
+  function initCookieBanner() {
+    const consent = getConsent();
+
+    if (consent === 'all') {
+      loadAnalytics();
+      // banner stays hidden
+    } else if (consent === 'essential') {
+      // no analytics
+    } else {
+      // no choice yet
+      showBanner();
+    }
+
+    const btnEssential = document.getElementById('cookie-essential');
+    const btnAll = document.getElementById('cookie-all');
+
+    if (btnEssential) {
+      btnEssential.addEventListener('click', function () {
+        setConsent('essential');
+        hideBanner();
+        // ensure analytics is NOT loaded
+      });
+    }
+
+    if (btnAll) {
+      btnAll.addEventListener('click', function () {
+        setConsent('all');
+        loadAnalytics();
+        hideBanner();
+      });
+    }
+  }
+
+  // Init when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+  } else {
+    initCookieBanner();
+  }
+})();

@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
+
 <body>
 <header class="header">
   <div class="container nav">
@@ -195,8 +196,41 @@
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="#faq">FAQ</a>
+      <button type="button" class="cookie-manage-link" onclick="openCookiePreferences()">
+        Cookie settings
+      </button>
     </div>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookie-banner" aria-live="polite">
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-text">
+      <h2>Cookies</h2>
+      <p>
+        This site uses essential cookies to function, and optional cookies for
+        anonymous usage analytics. You can accept only essentials or allow all.
+      </p>
+      <a href="privacy.html" class="cookie-link">Read the privacy policy</a>
+    </div>
+    <div class="cookie-banner-actions">
+      <button class="btn-outline" id="cookie-essential">Accept essential only</button>
+      <button class="btn-primary" id="cookie-all">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<!-- Optional: small "manage cookies" link in footer -->
+<script>
+  // expose a simple function to re-open the banner
+  window.openCookiePreferences = function () {
+    var banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.add('visible');
+    }
+  };
+</script>
+
+
 </body>
 </html>

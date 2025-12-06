@@ -206,3 +206,114 @@ summary{padding:10px 0}
   box-shadow: var(--shadow);
 }
 .theme-btn:hover{ background: rgba(255,255,255,.16) }
+
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 9999;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  background: radial-gradient(circle at top left, rgba(148, 163, 253, 0.14), transparent 55%),
+              rgba(8, 8, 10, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.cookie-banner.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cookie-banner-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cookie-banner-text h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.cookie-banner-text p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cookie-link {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.cookie-banner-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Buttons – reuse your style language */
+
+.cookie-banner-actions .btn-primary,
+.cookie-banner-actions .btn-outline {
+  font-size: 13px;
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.cookie-banner-actions .btn-primary {
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  border-color: transparent;
+}
+
+.cookie-banner-actions .btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.cookie-banner-actions .btn-outline:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cookie-manage-link {
+  font-size: 12px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .cookie-banner-inner {
+    align-items: flex-start;
+  }
+  .cookie-banner-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
