@@ -85,7 +85,7 @@
           data-news-item
           data-category="release android desktop"
         >
-          <h2>v0.3.0 — Encrypted chat & early file transfer</h2>
+          <h2>v1.0.0.0 — Encrypted chat & early file transfer</h2>
           <div class="news-meta">
             <span>2025-11-30</span>
             <span>•</span>
@@ -94,107 +94,16 @@
           </div>
           <div class="news-body">
             <p>
-              This version focuses on features that actually matter: secure communication
-              and getting files across the local network without begging a cloud service.
+              This is the first stable release of RemotePC.
             </p>
             <ul>
-              <li>End-to-end encrypted text chat between Android and Windows listener.</li>
-              <li>Initial file transfer support from Android to Windows.</li>
+              <li>Initial file transfer support from Android to Windows. (Alpha feature, expect issues - high failure rate)</li>
               <li>Improved handling of flaky Wi-Fi connections.</li>
               <li>Reduced idle CPU usage on the desktop app while connected.</li>
             </ul>
             <p>
               Expect rough edges on file transfer. If it breaks, keep the file name
               and steps to reproduce and send them via the contact email.
-            </p>
-          </div>
-        </article>
-
-        <article
-          class="card news-item"
-          data-animate
-          data-news-item
-          data-category="release desktop bugfix"
-        >
-          <h2>Desktop alpha cleanup — tray, logging & exits</h2>
-          <div class="news-meta">
-            <span>2025-11-10</span>
-            <span>•</span>
-            <span>Windows listener</span>
-            <span class="news-tag">Bugfix · Alpha</span>
-          </div>
-          <div class="news-body">
-            <p>
-              This one is less flashy, more “stop being annoying” focused for the
-              Windows side of things.
-            </p>
-            <ul>
-              <li>Tray icon now behaves properly when closing / minimizing the app.</li>
-              <li>Clearer error messages when the chosen port is already in use.</li>
-              <li>Fixed rare crash when closing the window during an active session.</li>
-              <li>Improved log messages around connection lifecycle.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article
-          class="card news-item"
-          data-animate
-          data-news-item
-          data-category="roadmap android desktop"
-        >
-          <h2>Roadmap — Short-term plan for RemotePC</h2>
-          <div class="news-meta">
-            <span>2025-10-28</span>
-            <span>•</span>
-            <span>Planning</span>
-            <span class="news-tag">Roadmap</span>
-          </div>
-          <div class="news-body">
-            <p>Current priorities for upcoming builds:</p>
-            <ul>
-              <li>More precise trackpad gestures and scrolling smoothness.</li>
-              <li>Optional pairing via PIN for shared networks.</li>
-              <li>Improved diagnostics screen (latency, packet drops, logs).</li>
-              <li>Clipboard sync between Android and Windows (text first, files later).</li>
-            </ul>
-            <p>
-              Priorities can change based on how badly something is breaking in the real world.
-            </p>
-          </div>
-        </article>
-
-        <article
-          class="card news-item"
-          data-animate
-          data-news-item
-          data-category="devlog android desktop bugfix"
-        >
-          <h2>Devlog — Stuff that broke, then worked (mostly)</h2>
-          <div class="news-meta">
-            <span>2025-10-12</span>
-            <span>•</span>
-            <span>Devlog</span>
-            <span class="news-tag">Behind the scenes</span>
-          </div>
-          <div class="news-body">
-            <p>A few highlights from recent sessions:</p>
-            <ul>
-              <li>
-                Spent an unhealthy amount of time fixing a bug that turned out to be
-                a typo in a packet header.
-              </li>
-              <li>
-                Discovered that certain routers “optimize” traffic by randomly ruining it.
-              </li>
-              <li>
-                Windows tried to keep old listener processes alive “for convenience”.
-                It is now less convenient.
-              </li>
-            </ul>
-            <p>
-              The goal of these logs is simple: keep a human-readable history of why
-              things work the way they do.
             </p>
           </div>
         </article>
@@ -212,31 +121,11 @@
             <li class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-item-header">
-                <span class="timeline-version">v0.3.0</span>
+                <span class="timeline-version">v1.0.0.0</span>
                 <span class="timeline-date">2025-11-30</span>
               </div>
               <div class="timeline-notes">
-                Encrypted chat, first file transfer implementation, stability tweaks.
-              </div>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-item-header">
-                <span class="timeline-version">v0.2.2</span>
-                <span class="timeline-date">2025-11-10</span>
-              </div>
-              <div class="timeline-notes">
-                Desktop alpha improvements: tray behavior, clearer logs, crash fixes.
-              </div>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-item-header">
-                <span class="timeline-version">v0.2.0</span>
-                <span class="timeline-date">2025-10-28</span>
-              </div>
-              <div class="timeline-notes">
-                Better connection handling, configurable ports, and early roadmap shaping.
+                First stable release. 
               </div>
             </li>
           </ul>
@@ -255,29 +144,25 @@
             </thead>
             <tbody>
               <tr>
-                <td>v0.3.0</td>
+                <td>v1.0.0.0</td>
                 <td>Android · Windows</td>
-                <td>Latest stable pre-1.0 build.</td>
+                <td>All in one ZIP</td>
                 <td><a href="#" class="btn-link">Download</a></td>
               </tr>
               <tr>
-                <td>v0.2.2</td>
+                <td>v1.0.0.0</td>
                 <td>Windows</td>
-                <td>Alpha desktop focus, tray & logging.</td>
+                <td>Windows .exe with the listener</td>
                 <td><a href="#" class="btn-link">Download</a></td>
               </tr>
               <tr>
-                <td>v0.2.0</td>
+                <td>v1.0.0.0</td>
                 <td>Android</td>
-                <td>Stable mouse control & gestures.</td>
+                <td>APK Client </td>
                 <td><a href="#" class="btn-link">Download</a></td>
               </tr>
             </tbody>
           </table>
-          <p class="sidebar-note">
-            Links are placeholders. Point these to wherever you host your APK / installer
-            (GitHub releases, direct download, etc.).
-          </p>
         </div>
       </div>
 
@@ -303,7 +188,6 @@
 
     <!-- SIDEBAR -->
     <aside class="news-sidebar">
-      <!-- Status widget -->
       <div class="card" data-animate>
         <div class="sidebar-title">Status</div>
         <div class="status-grid">
@@ -325,7 +209,7 @@
           </div>
           <div class="status-row">
             <span class="status-label">Update channel</span>
-            <span class="status-value">v0.3.0</span>
+            <span class="status-value">v1.0.0.0</span>
           </div>
           <div class="status-row">
             <span class="status-label">Last updated</span>
@@ -366,10 +250,6 @@
       <div class="card" data-animate>
         <div class="sidebar-title">Known issues</div>
         <ul class="sidebar-list">
-          <li>
-            On some routers, connections drop after long idle periods
-            (reconnect logic is being improved).
-          </li>
           <li>
             File transfer may fail with very long or unusual filenames
             (especially with emojis).
@@ -435,9 +315,7 @@
   </div>
 </div>
 
-<!-- Optional: small "manage cookies" link in footer -->
 <script>
-  // expose a simple function to re-open the banner
   window.openCookiePreferences = function () {
     var banner = document.getElementById('cookie-banner');
     if (banner) {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — RemotePC</title>
-  <meta name="description" content="Privacy Policy for RemotePC. We collect no analytics, no telemetry, and no personal data.">
+  <meta name="description" content="Privacy Policy for RemotePC. Local-only communication, no cloud relay, no in-app analytics, and optional website analytics with consent.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
@@ -12,65 +12,204 @@
 <body>
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="index.html"><span class="logo"></span><span>RemotePC</span></a>
+    <a class="brand" href="index.html">
+      <span class="logo"></span><span>RemotePC</span>
+    </a>
 
-    <!-- Theme toggle (required so app.js can apply saved theme) -->
     <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
       <span id="theme-icon">🌙</span>
     </button>
 
-    <nav id="primary-nav" class="navlinks">
-  <a href="index.html#features">Features</a>
-  <a href="index.html#how">How it works</a>
-  <a href="index.html#faq">FAQ</a>
-  <a href="news.html">News</a>
-  <a class="cta" href="index.html#download">Download</a>
-</nav>
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
+    <nav id="primary-nav" class="navlinks">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="news.html">News</a>
+      <a class="btn" href="privacy.html">Privacy</a>
+      <a class="btn" href="terms.html">Terms</a>
+      <a class="cta" href="index.html#download">Download</a>
+    </nav>
   </div>
 </header>
 
-<main class="container section">
-  <h1 data-animate>Privacy Policy</h1>
-  <p class="lead" data-animate>We built RemotePC to be private by design. There are no accounts, no cloud servers, and no tracking.</p>
+<main class="container section legal-main">
+  <header class="legal-header" data-animate>
+    <h1>Privacy Policy</h1>
+    <p class="lead">
+      RemotePC is built to be local-only and privacy-first. No accounts, no cloud relay, and no in-app analytics.
+    </p>
+    <div class="legal-meta">
+      <span class="pill">Local network only</span>
+      <span class="pill">No cloud servers</span>
+      <span class="pill">No telemetry</span>
+      <span class="sep">•</span>
+      <span>Last updated: December 2025</span>
+    </div>
+  </header>
 
-  <div class="card" data-animate>
-    <h2>Data We Do Not Collect</h2>
-    <p>We do not collect or store analytics, personal identifiers, usage telemetry, advertising identifiers, or crash logs.</p>
-  </div>
+  <div class="legal-layout">
+    <!-- Sidebar / TOC -->
+    <aside class="legal-toc" aria-label="On this page">
+      <div class="legal-toc-title">On this page</div>
+      <ul>
+        <li><a href="#overview">1. Overview</a></li>
+        <li><a href="#no-data">2. What we don’t collect</a></li>
+        <li><a href="#android">3. Android app permissions</a></li>
+        <li><a href="#windows">4. Windows listener & logs</a></li>
+        <li><a href="#local-only">5. Local-only communication</a></li>
+        <li><a href="#security">6. Encryption & security</a></li>
+        <li><a href="#website">7. Website cookies & analytics</a></li>
+        <li><a href="#rights">8. Your rights & control</a></li>
+        <li><a href="#contact">9. Contact</a></li>
+      </ul>
+    </aside>
 
-  <div class="card" data-animate>
-    <h2>Local-Only Communications</h2>
-    <p>The Android app connects directly to your Windows PC over your local network (LAN). Screenshots, system statistics, commands, and file transfers remain within your network unless you explicitly configure otherwise (e.g., manual port forwarding).</p>
-  </div>
+    <!-- Main content -->
+    <div class="legal-content">
+      <div class="card" id="overview" data-animate>
+        <h2>1. Overview</h2>
+        <p>
+          RemotePC consists of:
+        </p>
+        <ul>
+          <li>The Android app (controller)</li>
+          <li>The Windows listener (receiver)</li>
+          <li>The remotepc.tech website</li>
+        </ul>
+        <p>
+          The Android app and Windows listener communicate only across your own local network (LAN). 
+          We do not operate any cloud relay, we do not host user data, and we do not run analytics inside the apps.
+        </p>
+      </div>
 
-  <div class="card" data-animate>
-    <h2>Permissions (Android)</h2>
-    <ul>
-      <li><strong>Network</strong>: required for LAN communication with your PC.</li>
-      <li><strong>Storage</strong> (optional): used only when you choose a file to send to your PC.</li>
-    </ul>
-  </div>
+      <div class="card" id="no-data" data-animate>
+        <h2>2. What we do not collect</h2>
+        <p>RemotePC does <strong>not</strong> collect or store:</p>
+        <ul>
+          <li>Accounts or login information</li>
+          <li>Names, emails, or contact details</li>
+          <li>Usage telemetry or performance metrics</li>
+          <li>Advertising identifiers</li>
+          <li>Location data</li>
+          <li>In-app analytics of any kind</li>
+        </ul>
+        <p>
+          There is nothing uploaded to our servers, because for the apps themselves, there are no servers.
+        </p>
+      </div>
 
-  <div class="card" data-animate>
-    <h2>Windows Defender Notices</h2>
-    <p>Our Windows listener may be flagged as a remote-access tool due to its capabilities (keyboard/mouse input, screenshots, file transfer). This is a false positive typical for utilities of this class. You may add an exclusion in Windows Security if necessary.</p>
-  </div>
+      <div class="card" id="android" data-animate>
+        <h2>3. Android app permissions</h2>
+        <p>The Android app uses only the permissions it needs to control your PC and, optionally, transfer files:</p>
+        <ul>
+          <li><strong>INTERNET</strong> – to connect directly to your PC over your local network (Wi-Fi/LAN).</li>
+          <li><strong>ACCESS_WIFI_STATE</strong> – to detect if Wi-Fi is available for LAN communication.</li>
+          <li><strong>ACCESS_NETWORK_STATE</strong> – to check whether the device is online at all.</li>
+          <li><strong>Storage / file access (optional)</strong> – only used when you pick a file to send to your PC.</li>
+        </ul>
+        <p class="legal-fact">
+          The app does not scan your storage or upload any data to third-party services.
+        </p>
+      </div>
 
-  <div class="card" data-animate>
-    <h2>Third-Party Sharing</h2>
-    <p>We share nothing with third parties. There is no advertising SDK and no analytics SDK.</p>
-  </div>
+      <div class="card" id="windows" data-animate>
+        <h2>4. Windows listener & local logs</h2>
+        <p>
+          The Windows listener receives commands (mouse, keyboard, system actions, volume changes, screenshots, file data) 
+          from your Android device over TCP on your LAN.
+        </p>
+        <p>
+          For security and debugging, it writes a <strong>local-only log file</strong> that contains:
+        </p>
+        <ul>
+          <li>The timestamp of each action</li>
+          <li>The local IP address of the connected device (e.g., <code>192.168.x.x</code>)</li>
+          <li>A short description of the action performed</li>
+        </ul>
+        <pre>[2025-12-06 23:31:37] [192.168.1.201] Left click sent!
+[2025-12-06 23:31:37] [192.168.1.201] Right click sent!
+[2025-12-06 23:31:39] [192.168.1.201] Sent PC volume: 83%</pre>
+        <p>
+          This log:
+        </p>
+        <ul>
+          <li>Never leaves your PC</li>
+          <li>Is not uploaded or synced</li>
+          <li>Contains only LAN IPs, not your public IP</li>
+          <li>Can be deleted by you at any time</li>
+        </ul>
+      </div>
 
-  <div class="card" data-animate>
-    <h2>Contact</h2>
-    <p>Questions about privacy? Email us at <a href="mailto:stanwheat00@gmail.com">stanwheat00@gmail.com</a>.</p>
+      <div class="card" id="local-only" data-animate>
+        <h2>5. Local-only communication</h2>
+        <p>
+          All communication between your phone and PC happens across your local network:
+        </p>
+        <ul>
+          <li>No automatic connections to external servers</li>
+          <li>No cloud relay</li>
+          <li>No third-party middleman</li>
+        </ul>
+        <p>
+          If you manually expose the listener to the internet via port forwarding or a VPN, that is entirely your choice
+          and responsibility. RemotePC is designed primarily for LAN usage.
+        </p>
+      </div>
+    
+      <div class="card" id="website" data-animate>
+        <h2>6. Website cookies & analytics</h2>
+        <p>
+          The <strong>remotepc.tech</strong> website uses Google Analytics to understand basic anonymous usage patterns.
+          This is:
+        </p>
+        <ul>
+          <li>Loaded only if you click “Accept all” in the cookie banner</li>
+          <li>Not loaded if you accept “essential only”</li>
+          <li>Completely separate from app traffic (apps do not use analytics)</li>
+        </ul>
+        <p>
+          You can change your choice at any time using the “Cookie settings” link in the footer.
+        </p>
+      </div>
+
+      <div class="card" id="rights" data-animate>
+        <h2>7. Your rights & control</h2>
+        <p>
+          Since we do not store user data on our servers, most privacy actions are under your direct control:
+        </p>
+        <ul>
+          <li>Uninstall the Android app to remove app-side data (including pairing info)</li>
+          <li>Delete the Windows listener log file on your PC</li>
+          <li>Clear or reset cookie preferences on the website</li>
+        </ul>
+        <p>
+          There is no remote data profile for us to access, export, or delete on your behalf.
+        </p>
+      </div>
+
+      <div class="card" id="contact" data-animate>
+        <h2>8. Contact</h2>
+        <p>
+          Questions about privacy or data handling?
+        </p>
+        <p>
+          Email: <a href="mailto:stanwheat00@gmail.com">stanwheat00@gmail.com</a>
+        </p>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer>
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <div>© 2025-10-30 RemotePC. All rights reserved.</div>
+    <div>© 2025 RemotePC. All rights reserved.</div>
     <div class="links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
@@ -98,9 +237,7 @@
   </div>
 </div>
 
-<!-- Optional: small "manage cookies" link in footer -->
 <script>
-  // expose a simple function to re-open the banner
   window.openCookiePreferences = function () {
     var banner = document.getElementById('cookie-banner');
     if (banner) {

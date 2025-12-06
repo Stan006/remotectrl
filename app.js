@@ -1,11 +1,5 @@
-
-// RemotePC site JS
-// - Mobile nav toggle
-// - Intersection animations
-// - Simple carousel buttons
-
 (function(){
-  // Fade-in on scroll
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting){
@@ -23,7 +17,6 @@
     observer.observe(el);
   });
 
-  // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
@@ -35,7 +28,6 @@
     });
   });
 
-  // Simple carousel arrows if present
   document.querySelectorAll('.carousel').forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const prev = carousel.querySelector('.prev');
@@ -47,7 +39,6 @@
   });
 })();
 
-// Mobile nav toggle
 (() => {
   const btn = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-nav');
@@ -60,43 +51,46 @@
   });
 })();
 
-// ===== Theme toggle: light <-> dark <-> system =====
 (() => {
   const root = document.documentElement;
   const btn = document.getElementById("theme-toggle");
   const icon = document.getElementById("theme-icon");
   const mql = window.matchMedia("(prefers-color-scheme: dark)");
 
+  if (!btn || !icon) return;
+
   const getSaved = () => localStorage.getItem("theme") || "system";
   const setSaved = (mode) => localStorage.setItem("theme", mode);
 
   function apply(mode){
     root.classList.remove("light", "dark");
-    if(mode === "light") root.classList.add("light");
-    if(mode === "dark")  root.classList.add("dark");
 
-    // effective state for icon
+    if (mode === "light") root.classList.add("light");
+    if (mode === "dark")  root.classList.add("dark");
+
     const effectiveDark = mode === "dark" || (mode === "system" && mql.matches);
-    icon.textContent = effectiveDark ? "☀️" : (mode === "system" ? "🖥️" : "🌙");
+
+    icon.textContent = effectiveDark
+      ? "☀️" 
+      : (mode === "system" ? "🖥️" : "🌙");
+
     btn.setAttribute("title", `Theme: ${mode[0].toUpperCase()+mode.slice(1)} (click to change)`);
     btn.setAttribute("aria-label", `Toggle theme (current: ${mode})`);
   }
 
-  // React to system changes when in system mode
   mql.addEventListener?.("change", () => {
-    if(getSaved() === "system") apply("system");
+    if (getSaved() === "system") apply("system");
   });
 
-  // Cycle modes: light -> dark -> system -> light ...
   function next(mode){
-    if(mode === "light") return "dark";
-    if(mode === "dark")  return "system";
-    return "light"; // system -> light
+    if (mode === "light") return "dark";
+    if (mode === "dark")  return "system";
+    return "light";
   }
 
-  // Init + hook
-  let mode = getSaved();      // 'light' | 'dark' | 'system'
+  let mode = getSaved();
   apply(mode);
+
   btn.addEventListener("click", () => {
     mode = next(mode);
     setSaved(mode);
@@ -104,8 +98,9 @@
   });
 })();
 
+
 (function () {
-  const CONSENT_KEY = 'remotepc_cookie_consent'; // 'all' | 'essential'
+  const CONSENT_KEY = 'remotepc_cookie_consent';
 
   function getConsent() {
     try {
@@ -119,7 +114,6 @@
     try {
       localStorage.setItem(CONSENT_KEY, value);
     } catch (e) {
-      // storage blocked, whatever
     }
   }
 
@@ -137,21 +131,19 @@
     }
   }
 
-  // Load Google Analytics only if allowed
+
   function loadAnalytics() {
     if (window.__rp_analytics_loaded) return;
     window.__rp_analytics_loaded = true;
 
-    // put your GA4 ID here:
-    const GA_ID = 'G-2FD0X1BBMS'; // <--- replace with your actual ID
+    const GA_ID = 'G-2FD0X1BBMS';
 
-    // base script
+
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(script);
 
-    // gtag init
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     window.gtag = gtag;
@@ -167,11 +159,11 @@
 
     if (consent === 'all') {
       loadAnalytics();
-      // banner stays hidden
+
     } else if (consent === 'essential') {
-      // no analytics
+
     } else {
-      // no choice yet
+
       showBanner();
     }
 
@@ -182,7 +174,6 @@
       btnEssential.addEventListener('click', function () {
         setConsent('essential');
         hideBanner();
-        // ensure analytics is NOT loaded
       });
     }
 
@@ -195,10 +186,65 @@
     }
   }
 
-  // Init when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCookieBanner);
   } else {
     initCookieBanner();
   }
 })();
+
+(function () {
+  function initDownloadButtonEffects() {
+    const buttons = document.querySelectorAll('.download-btn');
+    const toast = document.getElementById('download-toast');
+    if (!buttons.length) return;
+
+    let toastTimeout = null;
+
+    function showToast(message) {
+      if (!toast) return;
+      toast.textContent = message;
+
+      toast.classList.add('visible');
+
+      if (toastTimeout) {
+        clearTimeout(toastTimeout);
+      }
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 2200);
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', function (e) {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        btn.style.setProperty('--ripple-x', x + 'px');
+        btn.style.setProperty('--ripple-y', y + 'px');
+
+        btn.classList.remove('is-pressed');
+        void btn.offsetWidth;
+        btn.classList.add('is-pressed');
+
+        const platform =
+          btn.getAttribute('data-platform') ||
+          btn.getAttribute('title') ||
+          btn.textContent.trim() ||
+          'download';
+
+        showToast('Download started – ' + platform);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDownloadButtonEffects);
+  } else {
+    initDownloadButtonEffects();
+  }
+})();
+
+

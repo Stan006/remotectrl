@@ -53,6 +53,5 @@
     });
   }
 
-  // Initial pass
   applyFilters();
 })();

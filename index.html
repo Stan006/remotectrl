@@ -50,10 +50,14 @@
   <section class="container hero">
     <div>
       <div class="badges" data-animate>
-        <span class="badge">No cloud • Local‑only</span>
-        <span class="badge">Open & transparent</span>
-        <span class="badge">Lightweight C++/Kotlin</span>
-      </div>
+  <span class="badge badge-network">
+    <span class="badge-dot"></span>
+    <span class="badge-label">Local network only · No cloud relay</span>
+  </span>
+  <span class="badge">Open & transparent</span>
+  <span class="badge">Lightweight C++/Kotlin</span>
+</div>
+
       <h1 data-animate>Control your Windows PC<br>from your Android — instantly.</h1>
       <p class="lead" data-animate>
         RemotePC is a fast, privacy‑first remote‑control system. Use your phone as a trackpad and keyboard, see live screenshots,
@@ -173,20 +177,164 @@
     </div>
   </section>
 
-  <!-- Download -->
-  <section id="download" class="section container">
-    <h2 data-animate>Download</h2>
-    <div class="cta-band" data-animate>
-      <div>
-        <strong>Get started in two minutes.</strong><br>
-        Download the Windows listener and the Android app.
+<!-- News Promo -->
+<section id="news" class="section container">
+  <h2 data-animate>Latest updates</h2>
+  <div class="cta-band news-band" data-animate>
+    <div class="news-band-main">
+      <div class="news-icon">
+        <span>📰</span>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="cta" href="#" title="Windows Listener (EXE)">Windows Listener (EXE)</a>
-        <a class="btn" href="#" title="Android App (APK)">Android App (APK)</a>
+      <div class="news-copy">
+        <strong>News, releases and devlogs</strong><br>
+        Follow development progress, release notes and roadmap updates for the RemotePC app and Windows listener.
+        <div class="news-meta">
+          <span class="news-pill">Updated periodically</span>
+          <span class="news-dot">•</span>
+          <span class="news-pill subtle">Pre 1.0 in active development</span>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="news-band-actions">
+      <a
+        class="btn download-btn news-btn"
+        href="news.html"
+        title="Read RemotePC news and updates"
+      >
+        Open News page
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Download -->
+  <section id="download" class="section container">
+  <h2 data-animate>Download</h2>
+  <div class="cta-band" data-animate>
+    <div>
+      <strong>Get started in two minutes.</strong><br>
+      Download the Windows listener and the Android app.
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a
+        class="cta download-btn"
+        href="https://remotepc.tech/downloads/RemotePC-Listener-0.3.0.exe"
+        title="Windows Listener (EXE)"
+        download
+        data-platform="Windows"
+      >
+        Windows Listener (EXE)
+      </a>
+      <a
+        class="btn download-btn"
+        href="https://remotepc.tech/downloads/RemotePC-Android-0.3.0.apk"
+        title="Android App (APK)"
+        download
+        data-platform="Android"
+      >
+        Android App (APK)
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section container" aria-label="How it works summary">
+  <div class="cta-band" data-animate>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+      <div>
+        <strong>How it works in 3 steps</strong><br>
+        Remote control over your local network, no cloud nonsense.
+      </div>
+      <ol class="mini-steps">
+        <li>Install the Windows listener.</li>
+        <li>Install the Android app on your phone.</li>
+        <li>Connect on the same Wi-Fi and start controlling.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- System Requirements -->
+<section id="requirements" class="section container">
+  <h2 data-animate>System Requirements</h2>
+  
+  <div class="req-card" data-animate>
+    
+    <div class="req-section">
+      <div class="req-title">
+        <span class="req-icon">🖥️</span>
+        <strong>Windows Listener</strong>
+      </div>
+      <ul class="req-list">
+        <li><span class="req-bullet"></span>Windows 10 or newer</li>
+        <li><span class="req-bullet"></span>64-bit system recommended</li>
+        <li><span class="req-bullet"></span>Wi-Fi connection on the same network as phone</li>
+        <li><span class="req-bullet"></span>~40MB free disk space</li>
+      </ul>
+    </div>
+
+    <div class="req-divider"></div>
+
+    <div class="req-section">
+      <div class="req-title">
+        <span class="req-icon">📱</span>
+        <strong>Android App</strong>
+      </div>
+      <ul class="req-list">
+        <li><span class="req-bullet"></span>Android 8.0 (Oreo) or newer</li>
+        <li><span class="req-bullet"></span>2GB RAM recommended</li>
+        <li><span class="req-bullet"></span>Wi-Fi connection required</li>
+        <li><span class="req-bullet"></span>No internet required (local-only)</li>
+      </ul>
+    </div>
+
+    <div class="req-divider"></div>
+
+    <div class="req-section">
+      <div class="req-title">
+        <span class="req-icon">🌐</span>
+        <strong>Network</strong>
+      </div>
+      <ul class="req-list">
+        <li><span class="req-bullet"></span>Device + PC must be on same LAN</li>
+        <li><span class="req-bullet"></span>Works on Wi-Fi 2.4GHz / 5GHz</li>
+        <li><span class="req-bullet"></span>No port forwarding required</li>
+        <li><span class="req-bullet"></span>LAN-only, no cloud relay</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section container" aria-label="Privacy and security">
+  <div class="card" data-animate>
+    <strong>Privacy & security</strong>
+    <p>
+      RemotePC communicates only over your local network. No cloud relay, no account,
+      no third-party servers. Analytics are optional and disabled unless you accept them.
+    </p>
+    <p style="font-size:12px;color:var(--muted);margin-top:6px">
+      Details are available in the <a href="privacy.html">Privacy Policy</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section container" aria-label="Support">
+  <div class="card" data-animate style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div>
+      <strong>Found a bug or have a feature request?</strong><br>
+      Share logs, describe what happened, and help improve RemotePC.
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <a class="btn" href="mailto:youremail@remotepc.tech">Email support</a>
+      <a class="btn secondary" href="https://github.com/your/repo/issues">Open GitHub issue</a>
+    </div>
+  </div>
+</section>
+
+
+
 </main>
 
 <footer>
@@ -220,9 +368,7 @@
   </div>
 </div>
 
-<!-- Optional: small "manage cookies" link in footer -->
 <script>
-  // expose a simple function to re-open the banner
   window.openCookiePreferences = function () {
     var banner = document.getElementById('cookie-banner');
     if (banner) {
@@ -231,6 +377,7 @@
   };
 </script>
 
+<div id="download-toast" class="download-toast" aria-live="polite"></div>
 
 </body>
 </html>
