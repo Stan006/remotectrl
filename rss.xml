@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>RemotePC – News & Updates</title>
+    <title>RemotePC - News & Updates</title>
     <link>https://remotepc.tech/news.html</link>
     <description>Release notes, roadmap updates, and development logs for the RemotePC Android app and Windows listener.</description>
     <language>en-us</language>
@@ -43,3 +43,4 @@
 
   </channel>
 </rss>
+
