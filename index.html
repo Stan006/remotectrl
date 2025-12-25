@@ -209,31 +209,63 @@
 
   <!-- Download -->
   <section id="download" class="section container">
-  <h2 data-animate>Download</h2>
-  <div class="cta-band" data-animate>
-    <div>
-      <strong>Get started in two minutes.</strong><br>
-      Download the Windows listener and the Android app.
+    <h2 data-animate>Download</h2>
+    <div class="cta-band" data-animate>
+      <div>
+        <strong>Get started with the Desktop host.</strong><br>
+        Download and run the listener on your Windows PC.
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a
+          class="cta download-btn"
+          href="https://github.com/Stan006/RemotePC/releases/download/v1.0.0.3/RemotePC.Server_Setup_v1.0.0.3.exe"
+          title="Windows Listener (EXE)"
+          download
+          data-platform="Windows"
+        >
+          Windows Listener (EXE)
+        </a>
+      </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a
-        class="cta download-btn"
-        href="https://github.com/Stan006/RemotePC/releases/download/v1.0.0.3/RemotePC.Server_Setup_v1.0.0.3.exe"
-        title="Windows Listener (EXE)"
-        download
-        data-platform="Windows"
-      >
-        Windows Listener (EXE)
+  </section>
+
+  <section id="download-android" class="section container" style="padding-top: 0;">
+  <div class="req-card" data-animate style="flex-direction: column; align-items: flex-start; gap: 16px;">
+    <div>
+      <strong>Get the Android App</strong><br>
+      <span style="color: var(--muted); font-size: 14px;">Install the controller on your mobile device via your preferred store.</span>
+    </div>
+    
+    <div style="display:flex; gap:12px; align-items: center; flex-wrap:wrap;">
+      <a href='https://remotepc.en.uptodown.com/android' title='Download RemotePC' style="transition: transform 0.2s ease; display: flex; align-items: center;">
+        <img src='https://stc.utdstc.com/img/mediakit/download-aao-big.png' alt='Download RemotePC' style="height: 44px; width: auto; border-radius: 6px;">
       </a>
-      <a
-        class="btn download-btn"
-        href="https://github.com/Stan006/RemotePC/releases/download/v1.0.0.2/RemotePC.apk"
-        title="Android App (APK)"
-        download
-        data-platform="Android"
-      >
-        Android App (APK)
+
+      <a href='https://www.amazon.com/gp/product/B0G5MKCM38' title='Download from Amazon Appstore' style="transition: transform 0.2s ease; display: flex; align-items: center;">
+        <img src='amazon-appstore-badge-english-black.png' alt='Get it on Amazon Appstore' style="height: 44px; width: auto;">
       </a>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+         <img 
+           src="GetItOnGooglePlay_Badge_Web_color_English.png" 
+           alt="Get it on Google Play" 
+           style="height: 45px; width: auto; opacity: 0.2; filter: grayscale(1); cursor: not-allowed;"
+         >
+         <span style="
+           font-size: 10px; 
+           color: var(--brand); 
+           font-weight: 800; 
+           text-transform: uppercase; 
+           letter-spacing: 0.1em; 
+           background: rgba(110, 168, 255, 0.1); 
+           padding: 4px 10px; 
+           border-radius: 6px; 
+           border: 1px solid rgba(110, 168, 255, 0.2);
+           white-space: nowrap;
+         ">
+           Play Store Coming Soon
+         </span>
+      </div>
     </div>
   </div>
 </section>
