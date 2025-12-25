@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wheat.remotepc",
+      "sha256_cert_fingerprints": [
+        "4C:E5:52:07:8F:6E:F9:50:4D:9E:25:05:50:B5:2A:55:57:8C:78:67:6D:E9:5A:F0:65:AE:53:5C:C8:5A:5B:D8"
+      ]
+    }
+  }
+]
