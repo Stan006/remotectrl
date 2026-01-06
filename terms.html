@@ -10,251 +10,192 @@
   <script defer src="app.js"></script>
 </head>
 <body>
+
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html">
-      <span class="logo"></span><span>RemotePC</span>
+      <div class="logo"></div>
+      <span>RemotePC</span>
     </a>
-
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-      <span id="theme-icon">🌙</span>
-    </button>
-
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
 
     <nav id="primary-nav" class="navlinks">
       <a href="index.html#features">Features</a>
       <a href="index.html#how">How it works</a>
       <a href="index.html#faq">FAQ</a>
       <a href="news.html">News</a>
-      <a class="btn" href="privacy.html">Privacy</a>
-      <a class="btn" href="terms.html">Terms</a>
-      <a class="cta" href="index.html#download">Download</a>
+      <div class="mobile-only-actions">
+         <a href="privacy.html">Privacy Policy</a>
+         <a href="terms.html">Terms of Service</a>
+      </div>
     </nav>
+
+    <div class="nav-actions">
+      
+      <a class="cta-primary desktop-only" href="index.html#download" style="height: 40px; padding: 0 16px; font-size: 13px;">Get Started</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <main class="container section legal-main">
   <header class="legal-header" data-animate>
-    <h1>Terms of Service</h1>
+    <div class="breadcrumb">Legal / Terms of Service</div>
+    <h1>Usage <span class="text-gradient">Agreement</span></h1>
     <p class="lead">
-      These terms explain how you’re allowed to use the RemotePC Android app, Windows listener, and website.
+      Clear, honest rules for using our ecosystem. No hidden fine print—just a focus on local-only security and user responsibility.
     </p>
-    <div class="legal-meta">
-      <span class="pill">Local-only remote control</span>
-      <span class="pill">No accounts</span>
-      <span class="pill">Personal use friendly</span>
-      <span class="sep">•</span>
-      <span>Last updated: December 2025</span>
+    
+    <div class="legal-summary-grid">
+      <div class="summary-item">
+        <span class="summary-icon">🤝</span>
+        <strong>Personal License</strong>
+        <span>Non-exclusive & revocable</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">⚖️</span>
+        <strong>"As Is" Basis</strong>
+        <span>Provided without warranty</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">🛠️</span>
+        <strong>Your Network</strong>
+        <span>You secure your own Wi-Fi</span>
+      </div>
     </div>
   </header>
 
   <div class="legal-layout">
-    <!-- Sidebar / TOC -->
-    <aside class="legal-toc" aria-label="On this page">
-      <div class="legal-toc-title">On this page</div>
-      <ul>
-        <li><a href="#intro">1. Introduction</a></li>
-        <li><a href="#license">2. License & usage</a></li>
-        <li><a href="#local">3. Local-only design</a></li>
-        <li><a href="#responsibility">4. Your responsibilities</a></li>
-        <li><a href="#logs">5. Logs & data</a></li>
-        <li><a href="#security">6. Security</a></li>
-        <li><a href="#warranty">7. No warranty</a></li>
-        <li><a href="#liability">8. Limitation of liability</a></li>
-        <li><a href="#updates">9. Updates & changes</a></li>
-        <li><a href="#contact">10. Contact</a></li>
-      </ul>
+    <aside class="legal-toc">
+      <div class="toc-sticky">
+        <div class="legal-toc-title">Terms Navigation</div>
+        <nav aria-label="Table of Contents">
+          <ul class="toc-list">
+            <li><a href="#intro" class="active"><span>01</span> Introduction</a></li>
+            <li><a href="#license"><span>02</span> License & Usage</a></li>
+            <li><a href="#local"><span>03</span> Local Design</a></li>
+            <li><a href="#responsibility"><span>04</span> Responsibilities</a></li>
+            <li><a href="#security"><span>05</span> Security Disclaimer</a></li>
+            <li><a href="#warranty"><span>06</span> No Warranty</a></li>
+            <li><a href="#contact"><span>07</span> Contact</a></li>
+          </ul>
+        </nav>
+        
+        <div class="toc-support-card">
+          <p>Questions about our terms?</p>
+          <a href="mailto:stanwheat00@gmail.com">Email Developer</a>
+        </div>
+      </div>
     </aside>
 
-    <!-- Main terms content -->
     <div class="legal-content">
-      <div class="card" id="intro" data-animate>
+      <section class="card" id="intro" data-animate>
         <h2>1. Introduction</h2>
-        <p>
-          These Terms of Service (“Terms”) apply to your use of RemotePC, including:
-        </p>
-        <ul>
-          <li>The RemotePC Android app</li>
-          <li>The RemotePC Windows listener</li>
-          <li>The remotepc.tech website</li>
-        </ul>
-        <p>
-          By downloading, installing, or using RemotePC, you agree to these Terms.
-        </p>
-      </div>
+        <p>These Terms of Service apply to the RemotePC Android app, the Windows listener, and the remotepc.tech website. By downloading or using the software, you enter a binding agreement with the developers.</p>
+      </section>
 
-      <div class="card" id="license" data-animate>
+      <section class="card" id="license" data-animate>
         <h2>2. License & usage</h2>
-        <p>
-          You are granted a non-exclusive, revocable license to use RemotePC for personal or internal use.
-        </p>
-        <ul>
-          <li>You may install and run the software on your own devices.</li>
-          <li>You may not misrepresent the software as your own product.</li>
-          <li>You may not redistribute modified builds under the RemotePC name without permission.</li>
-        </ul>
-      </div>
+        <p>You are granted a non-exclusive license to use RemotePC for personal or internal use. You may install and run the software on your own devices, but you may not redistribute modified builds under the RemotePC name without explicit permission.</p>
+      </section>
 
-      <div class="card" id="local" data-animate>
+      <section class="card" id="local" data-animate>
         <h2>3. Local-only design</h2>
-        <p>
-          RemotePC is designed to run on your <strong>local network (LAN)</strong>:
-        </p>
-        <ul>
-          <li>No built-in cloud relay</li>
-          <li>No external servers for remote control</li>
-          <li>No automatic exposure to the public internet</li>
-        </ul>
-        <p>
-          If you choose to expose the Windows listener to the internet (for example, via manual port forwarding, VPN,
-          or tunneling tools), you accept full responsibility for the configuration and any associated risks.
-        </p>
-      </div>
+        <p>RemotePC is strictly designed for <strong>local network (LAN)</strong> communication. We do not provide cloud relays or automatic internet exposure. If you choose to manually expose the software via port forwarding or VPNs, you accept all associated risks.</p>
+      </section>
 
-      <div class="card" id="responsibility" data-animate>
+      <section class="card" id="responsibility" data-animate>
         <h2>4. Your responsibilities</h2>
-        <p>You agree to:</p>
         <ul>
-          <li>Use RemotePC only on devices and networks where you have permission.</li>
-          <li>Choose a strong pairing PIN and keep it private.</li>
-          <li>Maintain reasonable security on your Wi-Fi network and devices.</li>
-          <li>Comply with applicable laws when using the software.</li>
+          <li>Keep your pairing PIN secure and private.</li>
+          <li>Ensure you have permission to control the target PC.</li>
+          <li>Maintain security on your router and access points.</li>
+          <li>Do not use RemotePC for unauthorized spying or illegal activity.</li>
         </ul>
-        <p>
-          You may not use RemotePC for unauthorized access, spying, or any illegal activity.
-        </p>
-      </div>
+      </section>
 
-      <div class="card" id="logs" data-animate>
-        <h2>5. Logs & data</h2>
-        <p>
-          The Windows listener writes a local log file with:
-        </p>
-        <ul>
-          <li>Timestamps of actions</li>
-          <li>Your LAN IP (e.g., <code>192.168.x.x</code>) for the connecting device</li>
-          <li>A short description of the action performed</li>
-        </ul>
-        <p>
-          This log is stored only on your PC, not uploaded to any server, and can be deleted by you at any time.
-        </p>
-        <p class="legal-fact">
-          For details on privacy, data, and cookies, see the <a href="privacy.html">Privacy Policy</a>.
-        </p>
-      </div>
+      <section class="card" id="security" data-animate>
+        <h2>5. Security Disclaimer</h2>
+        <p>RemotePC is a tool, not a full security suite. We do not guarantee protection against malware or network-level attacks. The security of your connection is as strong as the security of your local Wi-Fi network.</p>
+      </section>
 
-      <div class="card" id="security" data-animate>
-        <h2>6. Security</h2>
-        <p>
-          RemotePC takes a minimal, local-first approach to reduce the attack surface, but it does not replace proper
-          network security practices.
-        </p>
-        <ul>
-          <li>We do not guarantee protection against all attacks, malware, or misconfigurations.</li>
-          <li>You are responsible for firewall rules, router settings, and system updates.</li>
-          <li>If Windows Defender or other antivirus flags the listener, you may need to manually allow it if you trust the source.</li>
-          <li>The connection between your devices is as strong as the security of your wifi network, including your router and any access points, therefore you should ensure these are secure, and contain trusted devices and users only.</li>
-        </ul>
-      </div>
+      <section class="card" id="warranty" data-animate>
+        <h2>6. No warranty & Liability</h2>
+        <p>REMOTEPC IS PROVIDED "AS IS". To the maximum extent permitted by law, the developers are not liable for data loss, hardware damage, or unauthorized access resulting from weak network security or misconfiguration.</p>
+      </section>
 
-      <div class="card" id="warranty" data-animate>
-        <h2>7. No warranty</h2>
-        <p>
-          REMOTEPC IS PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED.
-        </p>
-        <p>
-          We do not guarantee that:
-        </p>
-        <ul>
-          <li>The software will be error-free or uninterrupted</li>
-          <li>All bugs will be fixed</li>
-          <li>The software will meet every specific use case or requirement</li>
-        </ul>
-      </div>
-
-      <div class="card" id="liability" data-animate>
-        <h2>8. Limitation of liability</h2>
-        <p>
-          To the maximum extent permitted by law, the developers of RemotePC are not liable for:
-        </p>
-        <ul>
-          <li>Any loss of data or damage to hardware or software</li>
-          <li>Unauthorized access resulting from weak PINs, poor network security, or misconfiguration</li>
-          <li>Indirect, incidental, or consequential damages of any kind</li>
-        </ul>
-        <p>
-          You use RemotePC at your own risk.
-        </p>
-      </div>
-
-      <div class="card" id="updates" data-animate>
-  <h2>9. Updates & changes</h2>
-  <p>
-    RemotePC may periodically query GitHub’s public API to determine whether a new version of the software is available.
-    This feature does not transmit personal data and can be disabled through the in-app or Windows settings menu.
-    By leaving automatic update checks enabled, you consent to these requests being made from your device to GitHub.
-  </p>
-
-  <p>
-    The latest version of these Terms will always be available on this page. 
-    Continued use of RemotePC after changes are published means you accept the updated Terms.
-  </p>
-</div>
-      <div class="card" id="contact" data-animate>
-        <h2>10. Contact</h2>
-        <p>
-          Questions about these Terms?
-        </p>
-        <p>
-          Email: <a href="mailto:stanwheat00@gmail.com">stanwheat00@gmail.com</a>
-        </p>
-      </div>
+      <section class="card" id="contact" data-animate>
+        <h2>7. Contact</h2>
+        <p>Questions about these Terms?</p>
+        <p>Email: <a href="mailto:stanwheat00@gmail.com" class="cookie-link">stanwheat00@gmail.com</a></p>
+      </section>
     </div>
   </div>
 </main>
 
-<footer>
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <div>© 2025 RemotePC. All rights reserved.</div>
-    <div class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <button type="button" class="cookie-manage-link" onclick="openCookiePreferences()">
-        Cookie settings
-      </button>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <div class="logo"></div><span>RemotePC</span>
+      </a>
+      <p class="footer-tagline">Secure, local-first remote control for the modern workspace.</p>
+      <div class="footer-status">
+        <span class="status-indicator"></span>
+        Systems Operational
+      </div>
     </div>
+
+    <div class="footer-links-group">
+      <div class="footer-col">
+        <span class="footer-label">Product</span>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#download">Download</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Resources</span>
+        <a href="index.html#faq">FAQ</a>
+        <a href="news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Legal</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <button type="button" class="cookie-manage-link" onclick="openCookiePreferences()">Cookie settings</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="copyright">© 2026 RemotePC. Engineered for privacy.</div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" aria-live="polite">
   <div class="cookie-banner-inner">
+    <div class="cookie-header">
+      <span class="cookie-icon">🍪</span>
+      <h2>Cookie Settings</h2>
+    </div>
     <div class="cookie-banner-text">
-      <h2>Cookies</h2>
-      <p>
-        This site uses essential cookies to function, and optional cookies for
-        anonymous usage analytics. You can accept only essentials or allow all.
-      </p>
-      <a href="privacy.html" class="cookie-link">Read the privacy policy</a>
+      <p>We use essential cookies for core functionality and anonymous analytics to improve your experience.</p>
+      <a href="privacy.html" class="cookie-link">Privacy Policy</a>
     </div>
     <div class="cookie-banner-actions">
-      <button class="btn-outline" id="cookie-essential">Accept essential only</button>
-      <button class="btn-primary" id="cookie-all">Accept all</button>
+      <button class="btn-cookie-secondary" id="cookie-essential">Essential only</button>
+      <button class="btn-cookie-primary" id="cookie-all">Accept all</button>
     </div>
   </div>
 </div>
 
 <script>
   window.openCookiePreferences = function () {
-    var banner = document.getElementById('cookie-banner');
-    if (banner) {
-      banner.classList.add('visible');
-    }
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.add('visible');
   };
 </script>
 

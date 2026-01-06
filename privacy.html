@@ -4,262 +4,200 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — RemotePC</title>
-  <meta name="description" content="Privacy Policy for RemotePC. Local-only communication, no cloud relay, no in-app analytics, and optional website analytics with consent.">
+  <meta name="description" content="Privacy Policy for RemotePC. Local-only communication, no cloud relay, no in-app analytics.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
 <body>
+
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html">
-      <span class="logo"></span><span>RemotePC</span>
+      <div class="logo"></div>
+      <span>RemotePC</span>
     </a>
-
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-      <span id="theme-icon">🌙</span>
-    </button>
-
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
 
     <nav id="primary-nav" class="navlinks">
       <a href="index.html#features">Features</a>
       <a href="index.html#how">How it works</a>
       <a href="index.html#faq">FAQ</a>
       <a href="news.html">News</a>
-      <a class="btn" href="privacy.html">Privacy</a>
-      <a class="btn" href="terms.html">Terms</a>
-      <a class="cta" href="index.html#download">Download</a>
+      <div class="mobile-only-actions">
+         <a href="privacy.html">Privacy Policy</a>
+         <a href="terms.html">Terms of Service</a>
+      </div>
     </nav>
+
+    <div class="nav-actions">   
+      <a class="cta-primary desktop-only" href="index.html#download" style="height: 40px; padding: 0 16px; font-size: 13px;">Get Started</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <main class="container section legal-main">
   <header class="legal-header" data-animate>
-    <h1>Privacy Policy</h1>
+    <div class="breadcrumb">Legal / Privacy Policy</div>
+    <h1>Privacy <span class="text-gradient">By Design</span></h1>
     <p class="lead">
-      RemotePC is built to be local-only and privacy-first. No accounts, no cloud relay, and no in-app analytics.
+      We believe privacy is a right, not a setting. RemotePC is architected to ensure your data never touches our hands.
     </p>
-    <div class="legal-meta">
-      <span class="pill">Local network only</span>
-      <span class="pill">No cloud servers</span>
-      <span class="pill">No telemetry</span>
-      <span class="sep">•</span>
-      <span>Last updated: December 2025</span>
+    
+    <div class="legal-summary-grid">
+      <div class="summary-item">
+        <span class="summary-icon">🛡️</span>
+        <strong>Zero Collection</strong>
+        <span>No accounts or emails</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">☁️</span>
+        <strong>No Cloud</strong>
+        <span>Local LAN traffic only</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-icon">👁️</span>
+        <strong>No In-App Tracking</strong>
+        <span>0 telemetry scripts</span>
+      </div>
     </div>
   </header>
 
   <div class="legal-layout">
-    <!-- Sidebar / TOC -->
-    <aside class="legal-toc" aria-label="On this page">
-      <div class="legal-toc-title">On this page</div>
-      <ul>
-        <li><a href="#overview">1. Overview</a></li>
-        <li><a href="#no-data">2. What we don’t collect</a></li>
-        <li><a href="#android">3. Android app permissions</a></li>
-        <li><a href="#windows">4. Windows listener & logs</a></li>
-        <li><a href="#local-only">5. Local-only communication</a></li>
-        <li><a href="#security">6. Encryption & security</a></li>
-        <li><a href="#website">7. Website cookies & analytics</a></li>
-        <li><a href="#rights">8. Your rights & control</a></li>
-        <li><a href="#contact">9. Contact</a></li>
-      </ul>
+    <aside class="legal-toc">
+      <div class="toc-sticky">
+        <div class="legal-toc-title">Documentation</div>
+        <nav aria-label="Table of Contents">
+          <ul class="toc-list">
+            <li><a href="#overview" class="active"><span>01</span> Overview</a></li>
+            <li><a href="#no-data"><span>02</span> Data Collection</a></li>
+            <li><a href="#android"><span>03</span> Permissions</a></li>
+            <li><a href="#windows"><span>04</span> Logs & Security</a></li>
+            <li><a href="#website"><span>05</span> Website & Analytics</a></li>
+            <li><a href="#contact"><span>06</span> Contact</a></li>
+          </ul>
+        </nav>
+        
+        <div class="toc-support-card">
+          <p>Need legal clarification?</p>
+          <a href="mailto:stanwheat00@gmail.com">Contact Support</a>
+        </div>
+      </div>
     </aside>
 
-    <!-- Main content -->
     <div class="legal-content">
-      <div class="card" id="overview" data-animate>
+      <section class="card" id="overview" data-animate>
         <h2>1. Overview</h2>
-        <p>
-          RemotePC consists of:
-        </p>
-        <ul>
-          <li>The Android app (controller)</li>
-          <li>The Windows listener (receiver)</li>
-          <li>The remotepc.tech website</li>
-        </ul>
-        <p>
-          The Android app and Windows listener communicate only across your own local network (LAN). 
-          We do not operate any cloud relay, we do not host user data, and we do not run analytics inside the apps.
-        </p>
-      </div>
+        <p>RemotePC consists of the Android app, the Windows listener, and this website. The ecosystem is designed for direct peer-to-peer communication over your own local network (LAN).</p>
+        <p>We do not operate cloud relays or middleman servers. Your data stays on your hardware.</p>
+      </section>
 
-      <div class="card" id="no-data" data-animate>
+      <section class="card" id="no-data" data-animate>
         <h2>2. What we do not collect</h2>
         <p>RemotePC does <strong>not</strong> collect or store:</p>
         <ul>
-          <li>Accounts or login information</li>
-          <li>Names, emails, or contact details</li>
+          <li>Personal Identifiable Information (PII)</li>
           <li>Usage telemetry or performance metrics</li>
-          <li>Advertising identifiers</li>
-          <li>Location data</li>
+          <li>Advertising identifiers or location data</li>
           <li>In-app analytics of any kind</li>
-          <li>No data is collected during update checks; GitHub only receives a standard anonymous request to retrieve version information.</li>
         </ul>
-        <p>
-          There is nothing uploaded to our servers, because for the apps themselves, there are no servers.
-        </p>
-      </div>
+      </section>
 
-      <div class="card" id="android" data-animate>
+      <section class="card" id="android" data-animate>
         <h2>3. Android app permissions</h2>
-        <p>The Android app uses only the permissions it needs to control your PC and, optionally, transfer files:</p>
+        <p>Permissions are requested only for core functionality:</p>
         <ul>
-          <li><strong>INTERNET</strong> – to connect directly to your PC over your local network (Wi-Fi/LAN).</li>
-          <li><strong>ACCESS_WIFI_STATE</strong> – to detect if Wi-Fi is available for LAN communication.</li>
-          <li><strong>ACCESS_NETWORK_STATE</strong> – to check whether the device is online at all.</li>
-          <li><strong>Storage / file access (optional)</strong> – only used when you pick a file to send to your PC.</li>
+          <li><strong>INTERNET:</strong> To connect to your PC via local IP.</li>
+          <li><strong>ACCESS_WIFI_STATE:</strong> To ensure you are on your home network.</li>
+          <li><strong>Storage (Optional):</strong> Required only for the File Transfer feature.</li>
         </ul>
-        <p class="legal-fact">
-          The app does not scan your storage or upload any data to third-party services.
-        </p>
-      </div>
+      </section>
 
-      <div class="card" id="windows" data-animate>
+      <section class="card" id="windows" data-animate>
         <h2>4. Windows listener & local logs</h2>
-        <p>
-          The Windows listener receives commands (mouse, keyboard, system actions, volume changes, screenshots, file data) 
-          from your Android device over TCP on your LAN.
-        </p>
-        <p>
-          For security and debugging, it writes a <strong>local-only log file</strong> that contains:
-        </p>
-        <ul>
-          <li>The timestamp of each action</li>
-          <li>The local IP address of the connected device (e.g., <code>192.168.x.x</code>)</li>
-          <li>A short description of the action performed</li>
-        </ul>
-        <pre>[2025-12-06 23:31:37] [192.168.1.201] Left click sent!
-[2025-12-06 23:31:37] [192.168.1.201] Right click sent!
-[2025-12-06 23:31:39] [192.168.1.201] Sent PC volume: 83%</pre>
-        <p>
-          This log:
-        </p>
-        <ul>
-          <li>Never leaves your PC</li>
-          <li>Is not uploaded or synced</li>
-          <li>Contains only LAN IPs, not your public IP</li>
-          <li>Can be deleted by you at any time</li>
-        </ul>
-      </div>
+        <p>For security auditing, the Windows app maintains a local log file on your hard drive. This file never leaves your machine.</p>
+        <pre>[2026-01-06 20:54:10] [192.168.1.15] Connection established
+[2026-01-06 20:54:12] [192.168.1.15] Mouse Move Action</pre>
+      </section>
 
-      <div class="card" id="local-only" data-animate>
-        <h2>5. Local-only communication</h2>
-        <p>
-          All communication between your phone and PC happens across your local network:
-        </p>
-        <ul>
-          <li>No automatic connections to external servers</li>
-          <li>No cloud relay</li>
-          <li>No third-party middleman</li>
-        </ul>
-        <p>
-          If you manually expose the listener to the internet via port forwarding or a VPN, that is entirely your choice
-          and responsibility. RemotePC is designed primarily for LAN usage.
-        </p>
-      </div>
+      <section class="card" id="website" data-animate>
+        <h2>5. Website & Analytics</h2>
+        <p>Our website uses Google Analytics <strong>only if you consent</strong> via the cookie banner. This data is anonymized and used solely to see how many people visit the page.</p>
+      </section>
 
-      <div class="card" id="local-only" data-animate>
-        <h2>6. Automatic update checks</h2>
-        <p>
-          The Windows listener may contact GitHub's public API to check whether a newer version of RemotePC is available.
-        </p>
-        <ul>
-          <li>Sends no personal data</li>
-          <li>Sends no identifiers, user info, device info, or account info</li>
-          <li>Includes only a standard HTTP request required to retrieve version metadata</li>
-          <li>Can be disabled at any time by turning off the “Automatic update check” option in the app or Windows listener settings respectively</li>
-        </ul>
-        <p>
-          No update-related data is stored or logged by us, and the request is sent directly from your device to GitHub, not to our servers.
-        </p>
-      </div>
-      
-      <div class="card" id="website" data-animate>
-        <h2>7. Website cookies & analytics</h2>
-        <p>
-          The <strong>remotepc.tech</strong> website uses Google Analytics to understand basic anonymous usage patterns.
-          This is:
-        </p>
-        <ul>
-          <li>Loaded only if you click “Accept all” in the cookie banner</li>
-          <li>Not loaded if you accept “essential only”</li>
-          <li>Completely separate from app traffic (apps do not use analytics)</li>
-        </ul>
-        <p>
-          You can change your choice at any time using the “Cookie settings” link in the footer.
-        </p>
-      </div>
-
-      <div class="card" id="rights" data-animate>
-        <h2>8. Your rights & control</h2>
-        <p>
-          Since we do not store user data on our servers, most privacy actions are under your direct control:
-        </p>
-        <ul>
-          <li>Uninstall the Android app to remove app-side data (including pairing info)</li>
-          <li>Delete the Windows listener log file on your PC</li>
-          <li>Clear or reset cookie preferences on the website</li>
-        </ul>
-        <p>
-          There is no remote data profile for us to access, export, or delete on your behalf.
-        </p>
-      </div>
-
-      <div class="card" id="contact" data-animate>
-        <h2>9. Contact</h2>
-        <p>
-          Questions about privacy or data handling?
-        </p>
-        <p>
-          Email: <a href="mailto:stanwheat00@gmail.com">stanwheat00@gmail.com</a>
-        </p>
-      </div>
+      <section class="card" id="contact" data-animate>
+        <h2>6. Contact</h2>
+        <p>Questions about our privacy architecture?</p>
+        <p>Email: <a href="mailto:stanwheat00@gmail.com" class="cookie-link">stanwheat00@gmail.com</a></p>
+      </section>
     </div>
   </div>
 </main>
 
-<footer>
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <div>© 2025 RemotePC. All rights reserved.</div>
-    <div class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <button type="button" class="cookie-manage-link" onclick="openCookiePreferences()">
-        Cookie settings
-      </button>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <div class="logo"></div><span>RemotePC</span>
+      </a>
+      <p class="footer-tagline">Secure, local-first remote control for the modern workspace.</p>
+      <div class="footer-status">
+        <span class="status-indicator"></span>
+        Systems Operational
+      </div>
     </div>
+
+    <div class="footer-links-group">
+      <div class="footer-col">
+        <span class="footer-label">Product</span>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#download">Download</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Resources</span>
+        <a href="index.html#faq">FAQ</a>
+        <a href="news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Legal</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <button type="button" class="cookie-manage-link" onclick="openCookiePreferences()">Cookie settings</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="copyright">© 2026 RemotePC. Engineered for privacy.</div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" aria-live="polite">
   <div class="cookie-banner-inner">
+    <div class="cookie-header">
+      <span class="cookie-icon">🍪</span>
+      <h2>Cookie Settings</h2>
+    </div>
     <div class="cookie-banner-text">
-      <h2>Cookies</h2>
-      <p>
-        This site uses essential cookies to function, and optional cookies for
-        anonymous usage analytics. You can accept only essentials or allow all.
-      </p>
-      <a href="privacy.html" class="cookie-link">Read the privacy policy</a>
+      <p>We use essential cookies for core functionality and anonymous analytics to improve your experience.</p>
+      <a href="privacy.html" class="cookie-link">Privacy Policy</a>
     </div>
     <div class="cookie-banner-actions">
-      <button class="btn-outline" id="cookie-essential">Accept essential only</button>
-      <button class="btn-primary" id="cookie-all">Accept all</button>
+      <button class="btn-cookie-secondary" id="cookie-essential">Essential only</button>
+      <button class="btn-cookie-primary" id="cookie-all">Accept all</button>
     </div>
   </div>
 </div>
 
 <script>
   window.openCookiePreferences = function () {
-    var banner = document.getElementById('cookie-banner');
-    if (banner) {
-      banner.classList.add('visible');
-    }
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.add('visible');
   };
 </script>
 
