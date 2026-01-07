@@ -2877,3 +2877,63 @@ html.dark {
   align-items: center;
   justify-content: center;
 }
+
+/* Update these in styles.css */
+.glow-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  grid-auto-rows: 40px;
+  pointer-events: all;
+  z-index: 1;
+  
+  /* Use HSL for easy color shifting via JS */
+  --grid-hue: 210; 
+  --grid-color: var(--grid-hue), 100%, 75%; /* 100% Saturation, 70% Lightness */
+}
+
+.grid-cube {
+  border: 0.5px solid rgba(255, 255, 255, 0.02);
+  transition: background 0.8s ease, border 0.8s ease, box-shadow 0.8s ease;
+}
+
+.grid-cube:hover {
+  background: hsla(var(--grid-color), 0.6); 
+  border-color: hsla(var(--grid-color), 1);
+  
+  /* Layered box-shadow for a massive "bloom" glow */
+  box-shadow: 
+    0 0 15px hsla(var(--grid-color), 0.8),
+    0 0 40px hsla(var(--grid-color), 0.5),
+    0 0 70px hsla(var(--grid-color), 0.2);
+  
+  transition: 0s; /* Instant reaction */
+  z-index: 10;    /* Brings the glowing cube to the front */
+  
+  /* Optional: Boost the pulse animation brightness */
+  animation: cube-pulse 0.8s infinite ease-in-out;
+}
+
+@keyframes cube-pulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.15); filter: brightness(2); } /* Double brightness at peak */
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+.interactive-grid-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: #000; /* Pure black makes colors appear 2x brighter */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add this to hide the noise texture specifically in this section */
+.interactive-grid-container::before {
+  content: none !important;
+  display: none !important;
+}

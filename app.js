@@ -556,3 +556,35 @@ if (grid) {
     grid.style.setProperty('--mouse-y', `${yPrc}%`);
   });
 }
+
+// Add to the bottom of app.js
+// Replace the grid logic at the bottom of app.js
+(function() {
+  // Replace the grid logic at the bottom of app.js
+const grid = document.getElementById('glow-grid');
+
+if (grid) {
+  // Ensure we have enough cubes (Optional: if you aren't rendering them in HTML)
+  if (grid.children.length === 0) {
+    for (let i = 0; i < 600; i++) {
+      const cube = document.createElement('div');
+      cube.classList.add('grid-cube');
+      grid.appendChild(cube);
+    }
+  }
+
+  grid.addEventListener('mousemove', (e) => {
+    const rect = grid.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    
+    // Calculate percentage (0 to 1) across the width
+    const xPrc = x / rect.width;
+
+    // Map 0-100% to 0-360 (The full Rainbow spectrum)
+    const hue = Math.floor(xPrc * 360); 
+    
+    // Update the CSS variable
+    grid.style.setProperty('--grid-hue', hue);
+  });
+}
+})();
