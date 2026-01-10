@@ -1,0 +1,577 @@
+/* ==========================================================================
+   Privacy Policy Styles
+   Based on RemotePC design system
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Reset & Base Styles
+   -------------------------------------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* --------------------------------------------------------------------------
+   Design Tokens & CSS Custom Properties
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --bg: #0b0d12;
+  --surface: #111523;
+  --surface-2: #0f1422;
+  --text: #e7ecf7;
+  --muted: #9fb0d1;
+  --brand: #6ea8ff;
+  --brand-2: #82ffd8;
+  --accent: #ffaa80;
+  --ok: #7dffa7;
+  --danger: #ff7d7d;
+  
+  /* Effects */
+  --ring: 0 0 0 8px rgba(110, 168, 255, 0.12);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Force dark color scheme */
+html { color-scheme: dark; }
+
+/* --------------------------------------------------------------------------
+   Base Typography & Body
+   -------------------------------------------------------------------------- */
+body {
+  background: 
+    radial-gradient(1200px 800px at 80% -10%, rgba(110, 168, 255, .12), transparent 50%),
+    radial-gradient(1000px 700px at -10% 10%, rgba(130, 255, 216, .10), transparent 50%),
+    var(--bg);
+  
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, 
+        "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", 
+        "Segoe UI Emoji", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Noise texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("assets/noise.png");
+  background-size: 200px 200px;
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+/* --------------------------------------------------------------------------
+   Base Elements
+   -------------------------------------------------------------------------- */
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Navigation
+   -------------------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(17, 21, 35, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  padding: 0 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand .logo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background:
+    radial-gradient(80% 80% at 30% 30%, var(--brand), transparent),
+    linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.brand .logo svg {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+/* Navigation links */
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navlinks a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.navlinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+
+.navlinks a:hover {
+  color: var(--text);
+}
+
+.navlinks a:hover::after {
+  transform: scaleX(1);
+}
+
+.navlinks a.active {
+  color: var(--text);
+}
+
+.navlinks a.active::after {
+  transform: scaleX(1);
+}
+
+/* CTA button */
+.cta-primary {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Container
+   -------------------------------------------------------------------------- */
+.legal-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Legal Header
+   -------------------------------------------------------------------------- */
+.legal-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-top: 40px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.legal-header h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.1;
+  margin: 20px 0;
+  letter-spacing: -0.03em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.legal-header .lead {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand);
+}
+
+.summary-card i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(110, 168, 255, 0.1);
+  border-radius: 14px;
+  margin: 0 auto 20px;
+  color: var(--brand);
+}
+
+.summary-card i svg {
+  width: 28px;
+  height: 28px;
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.summary-card span {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Legal Layout
+   -------------------------------------------------------------------------- */
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+@media (max-width: 900px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Table of Contents */
+.legal-toc {
+  position: relative;
+}
+
+.toc-sticky {
+  position: sticky;
+  top: 100px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.toc-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.toc-sticky nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toc-sticky a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.toc-sticky a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Legal Content */
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Article Cards */
+.legal-content .card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.legal-content .card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110, 168, 255, 0.3);
+}
+
+.legal-content .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(110, 168, 255, 0.3), transparent);
+}
+
+.legal-content h2 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  color: var(--text);
+}
+
+.legal-content p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+.legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content ul {
+  color: var(--muted);
+  padding-left: 24px;
+  margin: 0 0 20px 0;
+  line-height: 1.7;
+}
+
+.legal-content li {
+  margin-bottom: 8px;
+}
+
+.legal-content li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content li strong {
+  color: var(--text);
+}
+
+/* Code/Log styling */
+.legal-content pre {
+  background: rgba(13, 17, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--brand-2);
+  margin: 20px 0;
+}
+
+.legal-content pre::before {
+  content: 'logs';
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: auto;
+  padding: 40px 0;
+  background: linear-gradient(to bottom, transparent, rgba(110, 168, 255, 0.02));
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+  filter: blur(1px);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 16px;
+    height: 64px;
+  }
+  
+  .navlinks {
+    display: none;
+  }
+  
+  .legal-main {
+    padding: 20px 16px 60px;
+  }
+  
+  .legal-header {
+    padding-top: 20px;
+  }
+  
+  .legal-header h1 {
+    font-size: 32px;
+  }
+  
+  .legal-header .lead {
+    font-size: 16px;
+    padding: 0 16px;
+  }
+  
+  .legal-content .card {
+    padding: 24px;
+  }
+  
+  .legal-content h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-header h1 {
+    font-size: 28px;
+  }
+  
+  .legal-content .card {
+    padding: 20px;
+  }
+  
+  .summary-card {
+    padding: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Behavior
+   -------------------------------------------------------------------------- */
+:target {
+  scroll-margin-top: 100px;
+}
+
+/* Smooth transitions for cards */
+.card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease;
+}
